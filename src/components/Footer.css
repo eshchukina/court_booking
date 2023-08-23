@@ -1,0 +1,284 @@
+
+
+/* --text: #0d0e0b;
+--background: #f7f8f6;
+--primary: #756685;
+--secondary: #e0e4dc;
+--accent: #a2e85d; */
+
+@media screen and (max-width: 50em) {
+    .menu{
+        font-size: .8em;
+    }
+}
+
+
+
+
+
+  
+  
+  .footer {
+ 
+      background-color: #756685;
+
+      position: fixed; 
+      bottom: 0;
+      width: 100%;
+
+    
+      
+      
+      
+   
+  }
+
+ 
+
+
+  .footer-wrapper.dark .footer{
+  
+    background-color: #b3aabd;
+  }
+
+
+  .footer-wave-svg {
+      background-color: transparent;
+      display: block;
+      height: 30px;
+      position: relative;
+      top: -1px;
+      width: 100%;
+      
+      
+      
+      
+      
+  }
+
+  .footer-wrapper.dark .footer-wave-path{
+    fill: #756685;
+  }
+
+
+  .footer-wrapper.dark .footer-wave-path{
+    fill: #756685;
+  }
+
+
+
+  .footer-wave-path {
+      fill: #e0e4dc;
+     
+     
+  }
+  
+
+
+
+
+
+
+
+  .footer-content {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 75px;
+      position: relative;
+      
+      
+      
+      
+  }
+  
+  
+  
+ 
+
+  
+  .footer-social-links {
+      bottom: 0;
+      height: 54px;
+      position: absolute;
+      right: 0;
+      width: 236px;
+      
+      
+      
+  }
+  
+  .footer-social-amoeba-svg {
+      height: 54px;
+      left: 0;
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 236px;
+      
+      
+  }
+  
+  .footer-social-amoeba-path {
+      fill: #e0e4dc;
+    
+  }
+  .footer-wrapper.dark  .footer-social-amoeba-path {
+    fill: #756685;
+ 
+}
+
+
+  
+  .footer-social-link.linkedin {
+      height: 26px;
+      left: 3px;
+      top: 11px;
+      width: 26px;
+      
+  }
+  
+  .footer-social-link {
+      display: block;
+      padding: 10px;
+      position: absolute;
+      
+      
+  }
+  
+  
+  
+  .footer-social-link.twitter {
+      height: 28px;
+      left: 62px;
+      top: 3px;
+      width: 28px;
+      
+  }
+  
+  .footer-social-link.youtube {
+      height: 24px;
+      left: 123px;
+      top: 12px;
+      width: 24px;
+  }
+  
+  .footer-social-link.github {
+      height: 34px;
+      left: 172px;
+      top: 7px;
+      width: 34px;
+  }
+  
+
+  
+  
+  
+  
+  
+  
+  /* Media Query For different screens */
+  @media (min-width:320px) and (max-width:479px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .footer-content {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 75px;
+      position: relative;
+    }
+  }
+  @media (min-width:480px) and (max-width:599px)  { /* smartphones, Android phones, landscape iPhone */
+    .footer-content {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 75px;
+      position: relative;
+    }
+  }
+  @media (min-width:600px) and (max-width: 800px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    .footer-content {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 75px;
+      position: relative;
+    }
+  }
+  @media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+  
+  }
+  @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  
+  }
+  @media (min-width:1281px) { /* hi-res laptops and desktops */
+  
+  }
+  
+  
+  
+  
+  @media (min-width: 760px) {
+    .footer-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1230px;
+        padding: 40px 15px 75px;
+        position: relative;
+    }
+  
+    .footer-wave-svg {
+        height: 50px;
+    }
+  
+    .footer-content-column {
+        width: 24.99%;
+    }
+  }
+  @media (min-width: 568px) {
+    /* .footer-content-column {
+        width: 49.99%;
+    } */}
+
+
+
+    .textItem{
+position: relative;
+left: 5px;
+font-size: 22px;
+    }
+
+    .item, .item2, .item3{
+        color:#756685;
+    }
+
+    .item2{
+      position: relative;
+      right: 4px;
+      
+    }
+
+
+    .footer-wrapper.dark .footer .item,
+    .footer-wrapper.dark .footer .item2,
+    .footer-wrapper.dark .footer .item3
+    {
+
+      color:  #e0e4dc;
+    }
+  
+
+   
+    .item:hover,
+     .item2:hover,
+      .item3:hover {
+    color: #b2d957; 
+  }
+
+  .footer-wrapper.dark .footer .item:hover,
+  .footer-wrapper.dark .footer .item2:hover,
+  .footer-wrapper.dark .footer .item3:hover
+  {
+
+    color: #b2d957; 
+  }

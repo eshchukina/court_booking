@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Montserrat:wght@100;300;600;700&family=Nunito:wght@200&family=Pacifico&family=Patrick+Hand&family=Vidaloka&family=Ysabeau+SC:wght@1;100;200;300;500&display=swap');
+
+
+
+.dashboard{
+width: 100%;
+color: #756685;
+
+ 
+   /* font-family: 'Arsenal', sans-serif; */
+}
+
+.dashboard.dark{
+  color: #e0e4dc;
+}
+
+.dashboard.dark select{
+  color: #e0e4dc;
+}
+
+
+.dashboard-wrapper{
+
+
+    align-items: center;
+    margin: 10px;
+ 
+}
+
+.box-wrapper{
+   
+ 
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+
+  
+}
+.box:first-child{
+   
+ 
+
+   padding: 5px 16px;
+
+
+  
+}
+
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 0px;
+    margin-top: 20px;
+   
+ 
+  }
+
+
+  
+
+  th, td {
+    
+    padding: 0px 10px;
+    text-align: left;
+   
+    border-radius: 10px;
+    text-align: center;
+  }
+
+
+  td{
+    font-size: 16px;
+  }
+
+/* 
+  --text: #0d0e0b;
+  --background: #f7f8f6;
+  --primary: #756685;
+  --secondary: #e0e4dc;
+  --accent: #a2e85d; */
+
+
+
+  button {
+    margin: 20px;
+  }
+ 
+  
+  .modalLogin button {
+    margin: 20px 0px 20px 0px;
+  }
+ 
+
+  .btn-2 {
+    background: rgb(68, 68, 68);
+    border: none;
+    
+  }
+  .btn-2:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-2:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
+  
+  
+
+
+
+.busy-time {
+  
+    background-color:#b3aabd;
+
+  }
+
+
+
+
+
+  .wrapper-dashboard{
+    margin-top: 100px;
+    text-align: center;
+    align-items:center;
+
+  }
+
+
+
+
+  @media (max-width: 768px) {
+    table {
+      font-size: 12px;
+    }
+
+    th, td {
+      padding: 5px;
+    }
+  }
+
+
+  th p{
+    font-size: 20px;
+    font-weight: 100;
+    
+     /* font-family: 'Pacifico', cursive;   */
+  }
+
+
+  .personalName{
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 20px;
+  
+      /* font-family: 'Pacifico', cursive;   */
+     
+
+  }
+
+
+  .custom-btnBooking {
+
+   
+    color: #e0e4dc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+
+
+  .btn_booking{
+    background: #756685;
+    border: none;
+    cursor: pointer;
+    margin-right: 0px;
+ 
+  }
+  
+
+
+  .dashboard.dark .btn_booking{
+    background: #e0e4dc;
+ color:#756685;
+ 
+  }
+  
+
+  .dashboard.dark .btn_booking:hover {
+    color: #b2d957; 
+  }
+
+
+
+
+      .btn_booking:before {
+        height: 0%;
+        width: 2px;
+      }
+     
+    
+      .btn_booking:active {
+        box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+      }
+
+      .btn_booking:hover {
+        color: #b2d957; 
+      }
+
+
+
+   
+
+      .dashboard.dark select{
+        background-color:#756685;
+        box-shadow:  
+        4px 4px 6px 0 rgba(66, 56, 70, 0.5),
+
+
+
+
+
+}
+
+
+
+      select{
+        /* font-family: 'Arsenal', sans-serif;
+       */
+      
+     
+         font-family: 'Vidaloka', serif;  
+         cursor: pointer;
+text-align: center;
+         color: #756685;
+
+
+        font-size: 18px;
+        margin-bottom: 20px;
+        background-color: #e0e4dc;
+        padding: 10px;
+        border-radius: 10px;
+      
+border:none;
+        box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+
+      }
+
+      .booking-message{
+        text-align: center;
+      }
+
+select:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+
+          border:none;
+}
+
+
+select:focus{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+
+          border:none;
+}
+
+select option {
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.2),
+          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+          cursor: pointer;
+          border:none;
+}
+
+
+
+
+
+
+
+ table select  {
+  border:none;
+
+
+  box-shadow: none;
+
+
+
+
+ }
+
+ 
+
+
+
+
+
+
+ @media (max-width: 650px) {
+  .table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    overflow-y: auto; 
+  
+   position: relative;
+   top:20px;
+  }
+
+  .wrapper-dashboard{
+    position: relative;
+   top:30px;
+
+
+  }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+ @media (max-width: 550px) {
+
+
+
+.wrapper-dashboard{
+  position: relative;
+  top: 20px;
+}
+
+  }
+
+  
+ @media (max-width: 490px) {
+
+
+
+  .wrapper-dashboard{
+    position: relative;
+    top: 20px;
+
+  }
+  
+
+  .table-container {
+   
+    padding: 0px;
+    margin: 0px;
+ 
+  }
+
+
+  
+
+  th, td {
+    
+    padding: 0px;
+    
+   
+  
+  }
+
+
+  td{
+    font-size: 16px;
+  }
+
+
+    }
+
+    @media (max-width: 450px) {
+
+    .table-container select {
+      font-size: 15px;
+    }
+    }

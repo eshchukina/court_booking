@@ -1,0 +1,40 @@
+stages:
+
+  - build
+  - publish
+  - deploy
+
+
+building:
+  stage: build
+  image: node:18
+ 
+  script:
+    - NODE_ENV=production npm install
+    - NODE_ENV=production npm run build
+  artifacts:
+    paths:
+      - build/
+  tags:
+    - docker
+
+publish:
+  stage: publish
+  image: docker
+  script:
+    - docker build -t una_bb_ui .
+  tags:
+    - una
+
+deploy_app:
+  stage: deploy
+  image: docker
+  script:
+    - docker stop una_bb_ui || true
+    - docker rm una_bb_ui || true
+    - docker run -d
+      --name una_bb_ui
+      --network minikube
+      una_bb_ui
+  tags:
+    - una

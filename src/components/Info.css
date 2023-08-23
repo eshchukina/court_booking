@@ -1,0 +1,90 @@
+.textInfo{
+
+
+    margin: 0 15%;
+    text-align: center;
+
+ 
+
+
+}
+
+
+
+
+.sidemenu-itemFooter{
+
+  
+ padding: 5px;
+    border-radius: 100px;
+    background-color: #756685;
+text-align: center;
+    display: block;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: #e0e4dc;
+     width: 150px;
+    cursor: pointer;
+    color: #b2d957; 
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+
+
+
+}
+
+
+
+
+
+
+ h2.textInfo{
+    margin-bottom:  5%;
+}
+
+.info {
+    color: #756685;
+}
+
+
+
+.info.dark {
+    color: #e0e4dc;
+}
+
+@media (max-width: 550px) {
+
+    .textInfo{
+
+
+        margin: 10px 5% 0;
+        text-align: center;
+    
+     
+    
+    
+    }
+
+
+}
+
+
+
+@media (max-width: 390px) {
+
+    .textInfo{
+
+
+        margin: 10px  0 0 0;
+        text-align: center;
+        
+    
+     
+    
+    
+    }
+
+
+}
