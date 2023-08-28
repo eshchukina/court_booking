@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import Sidemenu from "./Sidemenu";
 import Info from "./Info";
 
+import config from '../config';
 
 
 

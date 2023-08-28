@@ -6,6 +6,8 @@ import { faCheck, faLock } from "@fortawesome/free-solid-svg-icons";
 import "./Style.css";
 import "./Dashboard.css";
 import LoginButton from "./LoginButton";
+import config from '../config';
+
 
 const Dashboard = ({ isDarkMode, account }) => {
   const [showFireworks, setShowFireworks] = useState(false);
@@ -76,7 +78,7 @@ const Dashboard = ({ isDarkMode, account }) => {
         Authorization: `Bearer ${token}`,
       };
 
-      const response = await fetch("http://192.168.1.30:91/courts", {
+      const response = await fetch(`${config.apiUrl}courts`, {
         headers: headersWithToken,
       });
 
@@ -129,7 +131,7 @@ const Dashboard = ({ isDarkMode, account }) => {
       };
 
       const response = await fetch(
-        `http://192.168.1.30:91/court/${courtId}/reservation-table?day=${day}`,
+        `${config.apiUrl}court/${courtId}/reservation-table?day=${day}`,
         {
           headers: headersWithToken,
         }
@@ -221,7 +223,7 @@ const Dashboard = ({ isDarkMode, account }) => {
         booked: true,
       };
 
-      const response = await fetch(`http://192.168.1.30:91/reserve-slot`, {
+      const response = await fetch(`${config.apiUrl}reserve-slot`, {
         method: "PUT",
         headers: headersWithToken,
         body: JSON.stringify(reservation),

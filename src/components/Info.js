@@ -8,6 +8,7 @@ import "./Dashboard.css";
 import "./Info.css";
 
 
+import config from '../config';
 
 
 const Info = ({

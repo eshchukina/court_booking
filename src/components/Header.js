@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 
+import config from "../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {  faUserPlus,  faEye, faEyeSlash, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
@@ -12,9 +13,8 @@ import "./Style.css";
 import LoginButton from "./LoginButton";
 
 
-import "./Style.css";
-import "./Header.css";
 
+import "./Header.css";
 
 
 const Header = ({
@@ -108,7 +108,7 @@ const Header = ({
   
       try {
 
-               const response = await fetch(`http://192.168.1.30:91/registration`, {
+               const response = await fetch(`${config.apiUrl}registration`, {
           method: "POST",
           mode: "cors",
           headers: {
@@ -149,7 +149,7 @@ const Header = ({
   
       try {
         // const response = await fetch(`${config.apiUrl}authorization/`,
-        const response = await fetch(`http://192.168.1.30:91/login`,
+        const response = await fetch(`${config.apiUrl}login`,
          {
           method: "POST",
           mode: "cors",
@@ -165,7 +165,7 @@ const Header = ({
           if (data && data.accessToken) {
             const { name, email, accessToken, refreshToken, expires_in } = data;
          
-  
+  console.log(`${config.apiUrl}`);
             setUserName(name);
             setUserEmail(email);
         
@@ -186,7 +186,7 @@ const Header = ({
               localStorage.setItem("lastVisitedAccount", activeAccount.id);
             }
           
-    
+            console.log(`${config.apiUrl}`);
             console.log("Login successful");
             console.log("accessToken", accessToken);
             
@@ -195,7 +195,7 @@ const Header = ({
             setIsModalOpen(false);
   
             console.log(data);
-            
+            console.log(`${config.apiUrl}`);
   
             const s = localStorage.getItem("expiresIn");
             const ss = parseInt(s, 10); 
@@ -208,11 +208,11 @@ const Header = ({
   
           } else {
             console.log("Access token is missing in the server response");
-            
+            console.log(`${config.apiUrl}`);
           }
         } else {
           console.log("Login failed");
-          
+          console.log(`${config.apiUrl}`);
         }
       } catch (error) {
         console.log("Error:", error);
@@ -230,9 +230,10 @@ const Header = ({
   
       if (storedRefreshToken) {
         try {
+          console.log("Refresh Token URL:", `${config.apiUrl}refresh`);
           console.log(JSON.stringify({ refreshToken: storedRefreshToken }));
           // const response = await fetch(`${config.apiUrl}refresh/`, 
-          const response = await fetch(`http://192.168.1.30:91/refresh`, 
+          const response = await fetch(`${config.apiUrl}refresh`, 
           
           
           {
@@ -260,6 +261,8 @@ const Header = ({
               }
             } else {
               console.log("Token refresh failed");
+              console.log(response);
+
             }
           } catch (error) {
             console.log("Error:", error);

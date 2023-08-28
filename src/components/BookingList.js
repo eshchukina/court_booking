@@ -12,6 +12,7 @@ import "./BookingList.css";
 
 
 
+
 const BookingList = ({
   isDarkMode,
   account,
@@ -31,7 +32,7 @@ const BookingList = ({
           Authorization: `Bearer ${token}`,
         };
        
-        const response = await fetch("http://192.168.1.30:91/courts", {
+        const response = await fetch(`${config.apiUrl}courts`, {
           headers: headersWithToken,
         });
           if (!response.ok) {
@@ -53,7 +54,7 @@ const BookingList = ({
           Authorization: `Bearer ${token}`,
         };
 
-        const response = await fetch("http://192.168.1.30:91/user/reserve-list", {
+        const response = await fetch(`${config.apiUrl}user/reserve-list`, {
           headers: headersWithToken,
         });
 
@@ -156,7 +157,7 @@ const BookingList = ({
         booked: true,
       };
 
-      const response = await fetch(`http://192.168.1.30:91/cancel-reserve`, {
+      const response = await fetch(`${config.apiUrl}cancel-reserve`, {
         method: "PUT",
         headers: headersWithToken,
         body: JSON.stringify(cancelReservationData),
