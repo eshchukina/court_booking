@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,10 +30,7 @@ const Sidemenu = ({ isDarkMode, setCurrentComponent, currentComponent }) => {
                 <a>home</a>
               </div>
            
-              <FontAwesomeIcon
-                icon={faArrowLeftLong}
-                className={`arrow ${currentComponent !== "Info" ? "hidden" : ""}`}
-              />
+          
               <div
                 className="sidemenu-item sidemenu-item--projects"
                 onClick={() => setCurrentComponent("BookingList")}

@@ -68,6 +68,7 @@ function App() {
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
         headersWithToken={headersWithToken}
+        currentComponent={currentComponent}
 
        
       />
@@ -85,6 +86,10 @@ function App() {
         toggleTheme={toggleTheme}
         headersWithToken={headersWithToken}
         setCurrentComponent={setCurrentComponent} 
+  
+     
+    
+        currentComponent={currentComponent}
         
         />
         

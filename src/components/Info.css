@@ -1,7 +1,7 @@
 .textInfo{
 
 
-    margin: 0 15%;
+    margin: 1% 15% 0;
     text-align: center;
 
  
@@ -46,6 +46,7 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 
 .info {
     color: #756685;
+  
 }
 
 

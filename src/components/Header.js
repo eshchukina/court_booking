@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {  faUserPlus,  faEye, faEyeSlash, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import "./Sidemenu.css";
+import "./Style.css";
 
 import LoginButton from "./LoginButton";
 
@@ -19,7 +22,8 @@ const Header = ({
     toggleTheme,
     activeAccount,
     setActiveAccount,
-    setIsLoggedIn }) => {
+    setIsLoggedIn, 
+    currentComponent }) => {
   
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -349,7 +353,6 @@ const Header = ({
             <div className="container">
                 <div className="theme-wrapper">
              
-
          <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} class="custom-btnBooking btn_booking" /> 
 </div>
 {/* <div class="ball"></div> */}
