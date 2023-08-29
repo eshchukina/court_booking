@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-
+import HeatmapChart from "./HeatmapChart";
 import config from '../config';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-
 import "./Style.css";
 import "./BookingList.css";
 
@@ -184,6 +183,12 @@ const BookingList = ({
 
   const formattedUserName = userName ? userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() : "";
 
+
+
+
+
+
+
   return (
     <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
@@ -267,6 +272,9 @@ const BookingList = ({
           </div>
         </div>
       </div>
+      
+      {userName ? <HeatmapChart reservations={reservations} courtData={courtData} /> : null}
+
     </div>
   );
 };

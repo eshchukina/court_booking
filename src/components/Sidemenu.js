@@ -9,7 +9,6 @@ import "./Style.css";
 
 
 
-import config from '../config';
 
 
 const Sidemenu = ({ isDarkMode, setCurrentComponent, currentComponent }) => {

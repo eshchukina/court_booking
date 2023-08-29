@@ -101,7 +101,19 @@ color: #756685;
     margin-right: 0px;
  
   }
-  
+    
+  .time-button:active 
+   
+    {box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+      -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+      
+      
+      }
+
+ 
+
 
 
 
@@ -176,10 +188,17 @@ color: #756685;
 
   .personalName{
     text-align: center;
-    padding-bottom: 20px;
+    padding: 0px;
     font-size: 20px;
-  
-      /* font-family: 'Pacifico', cursive;   */
+
+    
+     
+
+  }
+  .wrapper-dashboard .personalName{
+   margin-bottom: 20px;
+
+    
      
 
   }
@@ -218,7 +237,7 @@ color: #756685;
 
 
   .dashboard.dark .btn_booking{
-    background: #e0e4dc;
+    background: #b3aabd;
  color:#756685;
  
   }

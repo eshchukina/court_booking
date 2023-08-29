@@ -9,8 +9,8 @@
     
 }
   .sidemenu {
-    width: 50px;
-    height: 300px;
+    /* width: 50px;
+    height: 300px; */
     margin-left: 5%;
     position: fixed;
     top: 20%;
@@ -150,7 +150,7 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
       height: 50px;
       margin-left: 2%;
       position: fixed;
-      top: 15%;
+      top: 14%;
       left: 0px;
   z-index: 1;
       

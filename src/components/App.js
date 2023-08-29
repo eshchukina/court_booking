@@ -8,7 +8,6 @@ import Footer from "./Footer";
 import Sidemenu from "./Sidemenu";
 import Info from "./Info";
 
-import config from '../config';
 
 
 
@@ -20,7 +19,7 @@ function App() {
   });
 
   const [currentComponent, setCurrentComponent] = useState('dashboard'); 
-  const [userName, setUserName] = useState(""); 
+  // const [userName, setUserName] = useState(""); 
 
 
   const headersWithToken = {};
@@ -33,12 +32,12 @@ function App() {
     }
     localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
     const storedUserName = localStorage.getItem("userName");
-    if (!storedUserName) {
-      setCurrentComponent("Info");
-    } else {
-      setCurrentComponent("Dashboard");
-      setUserName(storedUserName);
-    }
+    // if (!storedUserName) {
+    //   setCurrentComponent("Info");
+    // } else {
+    //   setCurrentComponent("Dashboard");
+    
+    // }
   }, [isDarkMode]);
 
 

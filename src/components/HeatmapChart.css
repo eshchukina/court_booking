@@ -1,0 +1,191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Montserrat:wght@100;300;600;700&family=Nunito:wght@200&family=Pacifico&family=Patrick+Hand&family=Vidaloka&family=Ysabeau+SC:wght@1;100;200;300;500&display=swap');
+
+
+#chart {
+    width: 800px;
+    margin: 0 auto;
+    font-family: 'Vidaloka', serif;
+
+
+}
+
+
+
+
+
+
+
+.apexcharts-menu-icon{
+    display: none;
+    
+}
+
+
+
+
+ .apexcharts-heatmap-rect{
+    /* fill: #b3aabd!important; */
+    font-family: 'Vidaloka', serif!important;
+    
+}
+
+
+
+
+.apexcharts-text .apexcharts-xaxis-label{
+    font-family: 'Vidaloka', serif!important;
+}
+
+.apexcharts-text tspan{
+    font-family: 'Vidaloka', serif!important;
+    
+}
+
+title{
+    font-family: 'Vidaloka', serif!important;
+    color: #e0e4dc!important;
+}
+
+
+
+
+
+
+.apexcharts-text .apexcharts-xaxis-label{
+    font-family: 'Vidaloka', serif!important;
+  
+}
+
+
+
+text {
+    fill: #756685; 
+    font-size: 13px;
+  
+
+}
+
+.apexcharts-xaxis-tick {
+    display :none;
+}
+
+.apexcharts-datalabel{
+  
+}
+
+.apexcharts-gridlines-vertical{
+    fill: #e0e4dc!important;
+    background-color:#e0e4dc!important;
+    color: #e0e4dc!important;
+}
+
+
+
+
+g .apexcharts-grid-borders{
+    color: #e0e4dc!important;
+    fill: #e0e4dc!important;
+    background-color:   #e0e4dc!important;
+}
+ line .apexcharts-ycrosshairs{
+    color: #e0e4dc!important;
+    fill: #e0e4dc!important;
+    background-color:   #e0e4dc!important;
+
+}
+
+
+
+
+
+line .apexcharts-gridline {
+
+    fill: #e0e4dc!important;
+    background-color:   #e0e4dc!important;
+ 
+}
+.apexcharts-xcrosshairs, 
+.apexcharts-ycrosshairs,
+.apexcharts-gridline {
+ 
+    opacity: 1!important;
+ 
+}
+
+.apexcharts-legend {
+    display: none;
+
+}
+
+.apexcharts-legend-marker   {
+    display: none;
+}
+
+.apexcharts-legend-text{
+    display: none;
+}
+
+.apexcharts-legend-marker{
+    display: none!important;
+}
+
+#chart .personalName{
+ 
+  margin-top: 5px;
+
+  position: relative;
+  top:20px;
+  
+     
+
+  }
+
+
+  @media (max-width: 650px) {
+    #chart {
+     
+        width: 600px;
+    
+    
+    }
+    #chart .personalName{
+        width: 400px;
+        margin-top: 30px;
+      font-size: 18px;
+        position: relative;
+        top:40px;
+        text-align: center;
+           
+      
+        }
+    
+  }
+
+  
+  @media (max-width: 390px) {
+    #chart .personalName{
+        width: 400px;
+        margin-top: 10px;
+      font-size: 15px;
+        position: relative;
+        top:40px;
+        
+           
+      
+        }
+
+        
+text {
+   
+    font-size:10px;
+  
+
+}
+#chart {
+     
+    width: 300px;
+
+}
+    
+  }

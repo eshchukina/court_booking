@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import config from "../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faLock } from "@fortawesome/free-solid-svg-icons";
-
 import "./Style.css";
 import "./Dashboard.css";
 import LoginButton from "./LoginButton";
-import config from '../config';
-
 
 const Dashboard = ({ isDarkMode, account }) => {
   const [showFireworks, setShowFireworks] = useState(false);
@@ -25,14 +22,13 @@ const Dashboard = ({ isDarkMode, account }) => {
 
   const [timeSelectionManual, setTimeSelectionManual] = useState(false);
 
-
-
   const storedSelectedCourt = localStorage.getItem("selectedCourt");
   const storedSelectedDay = localStorage.getItem("selectedDay");
   const storedSelectedHour = localStorage.getItem("selectedHour");
-  const storedReservationData = JSON.parse(localStorage.getItem("reservationData"));
+  const storedReservationData = JSON.parse(
+    localStorage.getItem("reservationData")
+  );
   const storedCourtOptions = JSON.parse(localStorage.getItem("courtOptions"));
-  
 
   useEffect(() => {
     if (storedSelectedCourt) {
@@ -51,8 +47,6 @@ const Dashboard = ({ isDarkMode, account }) => {
       setCourtOptions(storedCourtOptions);
     }
   }, []);
-
-
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -101,15 +95,12 @@ const Dashboard = ({ isDarkMode, account }) => {
     const selectedCourtId = e.target.value;
     setSelectedCourt(selectedCourtId);
     setSelectedHour(""); // Reset selected hour when court changes
-  
+
     if (selectedCourtId && selectedDay) {
       fetchReservationData(selectedCourtId, selectedDay);
     }
     localStorage.setItem("selectedCourt", selectedCourtId);
-
   };
-  
-  
 
   const handleDaySelectionChange = (e) => {
     const selectedDayValue = e.target.value;
@@ -119,7 +110,6 @@ const Dashboard = ({ isDarkMode, account }) => {
       fetchReservationData(selectedCourt, selectedDayValue);
     }
     localStorage.setItem("selectedDay", selectedDayValue);
-
   };
 
   const fetchReservationData = async (courtId, day) => {
@@ -139,7 +129,7 @@ const Dashboard = ({ isDarkMode, account }) => {
 
       if (!response.ok) {
         console.log("Error fetching reservation data:", response);
-  
+
         return;
       }
 
@@ -147,11 +137,11 @@ const Dashboard = ({ isDarkMode, account }) => {
       setReservationData(data);
       setBookingSuccess(false);
       setBookingFail(false);
+
+
       localStorage.setItem("reservationData", JSON.stringify(data));
       localStorage.setItem("selectedHour", selectedHour);
       localStorage.setItem("courtOptions", JSON.stringify(data));
-
-
 
       fetchAccountData();
     } catch (error) {
@@ -189,8 +179,6 @@ const Dashboard = ({ isDarkMode, account }) => {
     const dates = generateNext7Days();
     setDateOptions(dates);
   }, []);
-
-
 
   const reserveSlot = async () => {
     try {
@@ -264,9 +252,6 @@ const Dashboard = ({ isDarkMode, account }) => {
 
 
 
-    
-
-
 
   return (
     <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
@@ -276,40 +261,39 @@ const Dashboard = ({ isDarkMode, account }) => {
             <div className="personalName">Hello, {formattedUserName}!</div>
           ) : (
             <div className="personalName">
-              Register and book tennis courts!{" "}
+              Welcome to our Tennis Court Booking App!
             </div>
           )}
           <div className="box-wrapper">
-          <select value={selectedCourt} onChange={handleCourtSelectionChange}>
-          <option >court name</option>
-  {courtOptions.map((option) => (
-    <option key={option.id} value={option.id}>
-      {option.name}
-    </option>
-  ))}
-</select>
+            <select value={selectedCourt} onChange={handleCourtSelectionChange}>
+              <option>court name</option>
+              {courtOptions.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
 
-<select value={selectedDay} onChange={handleDaySelectionChange}>
-<option >choose a date</option>
-  {dateOptions.map((date, index) => (
-  
-    <option key={index} value={date}>
-      {new Date(date).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-      })}
-    </option>
-  ))}
-</select>
+            <select value={selectedDay} onChange={handleDaySelectionChange}>
+              <option>choose a date</option>
+              {dateOptions.map((date, index) => (
+                <option key={index} value={date}>
+                  {new Date(date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                  })}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="dashboard-wrapper">
             <div className="table-container">
-            <table>
-  <thead>
-    <tr>
-      {/* <th colSpan="3">
+              <table>
+                <thead>
+                  <tr>
+                    {/* <th colSpan="3">
         <p>
           Court name:{" "}
           {courtOptions.find(
@@ -319,93 +303,74 @@ const Dashboard = ({ isDarkMode, account }) => {
 
 
       </th> */}
-    </tr>
-  </thead>
-  <tbody>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div className="time-buttons-column">
+                        {reservationData
+                          .filter((option) => option.date === selectedDay)
+                          .map((timeSlot) => (
+                            <button
+                              key={timeSlot.id}
+                              onClick={() => {
+                                if (!timeSlot.booked) {
+                                  setSelectedHour(timeSlot.start_time);
+                                  setTimeSelectionManual(true); // Mark time selection as manual
+                                  handleShowFireworks();
+                                  reserveSlot();
+                                  fetchAccountData();
+                                }
+                              }}
+                              className={`time-button ${
+                                timeSlot.booked ? "busy-time" : "free-time"
+                              }`}
+                              disabled={
+                                timeSelectionManual &&
+                                selectedHour !== timeSlot.start_time
+                              }
+                            >
+                              {formatTime(timeSlot.start_time)} -{" "}
+                              {formatTime(timeSlot.end_time)}{" "}
+                              {timeSlot.booked ? " " : " "}
+                            </button>
+                          ))}
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
 
-
-    <tr>
-
-
-      <td>
-     
-      <div className="time-buttons-column">
-      {reservationData
-  .filter((option) => option.date === selectedDay)
-  .map((timeSlot) => (
-    <button
-      key={timeSlot.id}
-      onClick={() => {
-        if (!timeSlot.booked) {
-          setSelectedHour(timeSlot.start_time);
-          setTimeSelectionManual(true); // Mark time selection as manual
-          handleShowFireworks();
-          reserveSlot();
-          fetchAccountData();
-        }
-      }}
-      className={`time-button ${
-        timeSlot.booked ? "busy-time" : "free-time"
-      }`}
-      disabled={timeSelectionManual && selectedHour !== timeSlot.start_time}
-    >
-      {formatTime(timeSlot.start_time)} -{" "}
-      {formatTime(timeSlot.end_time)}{" "}
-      {timeSlot.booked ? " " : " "}
-    </button>
-  ))}
-
-</div>
-
-
-      </td>
-     
-    </tr>
-    </tbody>
- 
-
-
-
-
-
-    {userName ? (
-
- <tr><td>    
-  
-  
-  
-  
-   <button
-          className="custom-btnBooking btn_booking"
-          title="booking"
-          onClick={() => {
-            if (
-              window.confirm(
-                "Are you sure you want to make a booking?"
-              )
-            ) {
-              handleShowFireworks();
-              reserveSlot();
-              fetchAccountData();
-            }
-          }}
-        >
-          {/* <FontAwesomeIcon icon={faCheck} /> */}
-          booking
-        </button></td></tr>
-
-) : (
-  <div className="personalName">Welcome to our Tennis Court Booking App!
-  
-
-  
-  
-  </div>
-)}
-
-</table>
-
-
+                {userName ? (
+                  <tr>
+                    <td>
+                      <button
+                        className="custom-btnBooking btn_booking"
+                        title="booking"
+                        onClick={() => {
+                          if (
+                            window.confirm(
+                              "Are you sure you want to make a booking?"
+                            )
+                          ) {
+                            handleShowFireworks();
+                            reserveSlot();
+                            fetchAccountData();
+                          }
+                        }}
+                      >
+                        {/* <FontAwesomeIcon icon={faCheck} /> */}
+                        booking
+                      </button>
+                    </td>
+                  </tr>
+                ) : (
+                  <div className="personalName">
+                    {" "}
+                    Register and book tennis courts!
+                  </div>
+                )}
+              </table>
             </div>
           </div>
           <div>
@@ -442,7 +407,7 @@ const Dashboard = ({ isDarkMode, account }) => {
           )}
         </div>
       </div>
-    </div>
+       </div>
   );
 };
 export default Dashboard;
