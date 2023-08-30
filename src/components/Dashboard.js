@@ -31,24 +31,24 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   );
   const storedCourtOptions = JSON.parse(localStorage.getItem("courtOptions"));
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
-useEffect(() => {
-  if (storedSelectedCourt) {
-    setSelectedCourt(storedSelectedCourt);
-  }
-  if (storedSelectedDay) {
-    setSelectedDay(storedSelectedDay);
-  }
-  if (storedSelectedHour) {
-    setSelectedHour(storedSelectedHour);
-  }
-  if (storedReservationData) {
-    setReservationData(storedReservationData);
-  }
-  if (storedCourtOptions) {
-    setCourtOptions(storedCourtOptions);
-  }
-}, []);
+  useEffect(() => {
+    if (storedSelectedCourt) {
+      setSelectedCourt(storedSelectedCourt);
+    }
+    if (storedSelectedDay) {
+      setSelectedDay(storedSelectedDay);
+    }
+    if (storedSelectedHour) {
+      setSelectedHour(storedSelectedHour);
+    }
+    if (storedReservationData) {
+      setReservationData(storedReservationData);
+    }
+    if (storedCourtOptions) {
+      setCourtOptions(storedCourtOptions);
+    }
+  }, [storedSelectedCourt, storedSelectedDay, storedSelectedHour, storedReservationData, storedCourtOptions]);
+  
 
 
   const closeModal = () => {
