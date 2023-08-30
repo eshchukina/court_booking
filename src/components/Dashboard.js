@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
 import config from "../config";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faLock } from "@fortawesome/free-solid-svg-icons";
+
 import "./Style.css";
 import "./Dashboard.css";
-import LoginButton from "./LoginButton";
 
-const Dashboard = ({ isDarkMode, account }) => {
+const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const [showFireworks, setShowFireworks] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [bookingFail, setBookingFail] = useState(false);
@@ -30,23 +30,25 @@ const Dashboard = ({ isDarkMode, account }) => {
   );
   const storedCourtOptions = JSON.parse(localStorage.getItem("courtOptions"));
 
-  useEffect(() => {
-    if (storedSelectedCourt) {
-      setSelectedCourt(storedSelectedCourt);
-    }
-    if (storedSelectedDay) {
-      setSelectedDay(storedSelectedDay);
-    }
-    if (storedSelectedHour) {
-      setSelectedHour(storedSelectedHour);
-    }
-    if (storedReservationData) {
-      setReservationData(storedReservationData);
-    }
-    if (storedCourtOptions) {
-      setCourtOptions(storedCourtOptions);
-    }
-  }, []);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  if (storedSelectedCourt) {
+    setSelectedCourt(storedSelectedCourt);
+  }
+  if (storedSelectedDay) {
+    setSelectedDay(storedSelectedDay);
+  }
+  if (storedSelectedHour) {
+    setSelectedHour(storedSelectedHour);
+  }
+  if (storedReservationData) {
+    setReservationData(storedReservationData);
+  }
+  if (storedCourtOptions) {
+    setCourtOptions(storedCourtOptions);
+  }
+}, []);
+
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -138,7 +140,6 @@ const Dashboard = ({ isDarkMode, account }) => {
       setBookingSuccess(false);
       setBookingFail(false);
 
-
       localStorage.setItem("reservationData", JSON.stringify(data));
       localStorage.setItem("selectedHour", selectedHour);
       localStorage.setItem("courtOptions", JSON.stringify(data));
@@ -152,7 +153,7 @@ const Dashboard = ({ isDarkMode, account }) => {
   const handleShowFireworks = () => {
     setTimeout(() => {
       setShowFireworks(false);
-    }, 1400); // 5000 milliseconds = 5 seconds
+    }, 1500); // 5000 milliseconds = 5 seconds
   };
 
   const formatTime = (isoTime) => {
@@ -249,11 +250,12 @@ const Dashboard = ({ isDarkMode, account }) => {
     ? userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase()
     : "";
 
-
-
-
-
   return (
+    <motion.div
+    initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
     <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
         <div className="wrapper-dashboard">
@@ -292,18 +294,7 @@ const Dashboard = ({ isDarkMode, account }) => {
             <div className="table-container">
               <table>
                 <thead>
-                  <tr>
-                    {/* <th colSpan="3">
-        <p>
-          Court name:{" "}
-          {courtOptions.find(
-            (court) => court.id === parseInt(selectedCourt)
-          )?.name || ""}
-        </p>
-
-
-      </th> */}
-                  </tr>
+                  <tr></tr>
                 </thead>
                 <tbody>
                   <tr>
@@ -339,48 +330,46 @@ const Dashboard = ({ isDarkMode, account }) => {
                       </div>
                     </td>
                   </tr>
-                </tbody>
 
-                {userName ? (
-                  <tr>
-                    <td>
-                      <button
-                        className="custom-btnBooking btn_booking"
-                        title="booking"
-                        onClick={() => {
-                          if (
-                            window.confirm(
-                              "Are you sure you want to make a booking?"
-                            )
-                          ) {
-                            handleShowFireworks();
-                            reserveSlot();
-                            fetchAccountData();
-                          }
-                        }}
-                      >
-                        {/* <FontAwesomeIcon icon={faCheck} /> */}
-                        booking
-                      </button>
-                    </td>
-                  </tr>
-                ) : (
-                  <div className="personalName">
-                    {" "}
-                    Register and book tennis courts!
-                  </div>
-                )}
+                  {userName ? (
+                    <tr>
+                      <td>
+                        <button
+                          className="custom-btnBooking btn_booking"
+                          title="booking"
+                          onClick={() => {
+                            if (
+                              window.confirm(
+                                "Are you sure you want to make a booking?"
+                              )
+                            ) {
+                              handleShowFireworks();
+                              reserveSlot();
+                              fetchAccountData();
+                            }
+                          }}
+                        >
+                          {/* <FontAwesomeIcon icon={faCheck} /> */}
+                          booking
+                        </button>
+                      </td>
+                    </tr>
+                  ) : (
+                    <div className="personalName">
+                      {" "}
+                      Register and book tennis courts!
+                    </div>
+                  )}
+                </tbody>
               </table>
             </div>
           </div>
           <div>
             {bookingSuccess && (
               <>
-                <p className="booking-message">Booking done! </p>
                 <p className="booking-message">
-                  {" "}
-                  You can view the list of your bookings in the application's
-                  sidebar menu
+                  Booking done! You can view the list of your bookings in the
+                  application's sidebar menu{" "}
                 </p>
               </>
             )}
@@ -407,7 +396,8 @@ const Dashboard = ({ isDarkMode, account }) => {
           )}
         </div>
       </div>
-       </div>
+    </div>
+    </motion.div>
   );
 };
 export default Dashboard;

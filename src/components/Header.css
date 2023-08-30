@@ -249,12 +249,12 @@ header.dark {
   --initialSize: 0.5vmin;
   --finalSize: 45vmin;
   --particleSize: 0.2vmin;
-  --color1: yellow;
-  --color2: khaki;
-  --color3: white;
-  --color4: lime;
-  --color5: gold;
-  --color6: mediumseagreen;
+  --color1: #cfec8c; 
+  --color2:#856675;
+  --color3: #b2d957; 
+  --color4: #b3aabd;
+  --color5: #6f8934; 
+  --color6: #5a4b6a;
   --y: -30vmin;
   --x: -50%;
   --initialY: 60vmin;
@@ -343,12 +343,12 @@ header.dark {
 .firework:nth-child(2),
 .firework:nth-child(2)::before,
 .firework:nth-child(2)::after {
-  --color1: pink;
-  --color2: violet;
-  --color3: fuchsia;
-  --color4: orchid;
-  --color5: plum;
-  --color6: lavender;  
+  --color1: #644b7f;
+  --color2: #b2d957; 
+  --color3: #856677;
+  --color4: #7f9b3f; 
+  --color5:#b3aabd;
+  --color6: #d7f09e; 
   --finalSize: 40vmin;
   left: 30%;
   top: 60%;
@@ -363,12 +363,12 @@ header.dark {
 .firework:nth-child(3),
 .firework:nth-child(3)::before,
 .firework:nth-child(3)::after {
-  --color1: cyan;
-  --color2: lightcyan;
-  --color3: lightblue;
-  --color4: PaleTurquoise;
-  --color5: SkyBlue;
-  --color6: lavender;
+  --color1: #b2d957; 
+  --color2: #b3aabd;
+  --color3:#c1d78d; 
+  --color4: #856678;
+  --color5:#6d8537; 
+  --color6: #666985;
   --finalSize: 35vmin;
   left: 70%;
   top: 60%;

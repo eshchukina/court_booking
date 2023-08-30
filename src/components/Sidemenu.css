@@ -20,7 +20,7 @@ z-index: 1;
     
    
   }
-  .sidemenu a:hover {
+  .sidemenu p:hover {
 
     color: #b2d957; 
 
@@ -102,7 +102,7 @@ z-index: 2;
 inset -4px -4px 6px 0 rgba(255,255,255,.2),
 inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
   }
-  .sidemenu-item:hover a {
+  .sidemenu-item:hover p {
     opacity: 100;
     transform: translateX(50px);
     z-index: 1;
@@ -131,7 +131,7 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
   }
   
 
-  .sidemenu a {
+  .sidemenu p {
     color: #fff;
     opacity: -100;
     transform: translateX(0px);

@@ -165,11 +165,11 @@ line .apexcharts-gridline {
   
   @media (max-width: 390px) {
     #chart .personalName{
-        width: 400px;
-        margin-top: 10px;
+    
+        margin-top: 0px;
       font-size: 15px;
         position: relative;
-        top:40px;
+        top:30px;
         
            
       
@@ -178,13 +178,14 @@ line .apexcharts-gridline {
         
 text {
    
-    font-size:10px;
+    font-size:8px;
   
 
 }
 #chart {
      
-    width: 300px;
+    width: 400px;
+    height: 150px;
 
 }
     

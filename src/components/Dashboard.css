@@ -111,7 +111,11 @@ color: #756685;
       
       
       }
-
+      .time-button:hover
+   
+      { background-color: #b2d957; 
+        
+        }
  
 
 
@@ -322,7 +326,7 @@ select:active{
                     -4px -4px 6px 0 rgba(116, 125, 136, .5), 
           inset -4px -4px 6px 0 rgba(255,255,255,.2),
           inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-
+  
           border:none;
 }
 
@@ -332,8 +336,10 @@ select:focus{
                     -4px -4px 6px 0 rgba(116, 125, 136, .5), 
           inset -4px -4px 6px 0 rgba(255,255,255,.2),
           inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+       
 
           border:none;
+       
 }
 
 select option {
@@ -344,8 +350,6 @@ select option {
           cursor: pointer;
           border:none;
 }
-
-
 
 
 
@@ -373,11 +377,11 @@ select option {
   .table-container {
     max-width: 100%;
     overflow-x: auto;
-    padding: 20px;
+    padding: 10px;
     overflow-y: auto; 
   
    position: relative;
-   top:20px;
+   top:0px;
   }
 
   .wrapper-dashboard{
@@ -397,19 +401,6 @@ select option {
 
 
 
-
-
- @media (max-width: 550px) {
-
-
-
-.wrapper-dashboard{
-  position: relative;
-  top: 20px;
-}
-
-  }
-
   
  @media (max-width: 490px) {
 
@@ -417,7 +408,7 @@ select option {
 
   .wrapper-dashboard{
     position: relative;
-    top: 20px;
+    top: 0px;
 
   }
   
