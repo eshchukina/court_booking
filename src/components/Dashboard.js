@@ -47,7 +47,8 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     if (storedCourtOptions) {
       setCourtOptions(storedCourtOptions);
     }
-  }, [storedSelectedCourt, storedSelectedDay, storedSelectedHour, storedReservationData, storedCourtOptions]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   
 
 
