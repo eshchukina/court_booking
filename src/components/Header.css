@@ -1,7 +1,8 @@
 
 .logo{
 
-    background-image: url("/public/court-booking.png");
+    /* background-image: url("/public/court-booking.png"); */
+    background-image: url("court-booking.png");
     background-size: contain;
     background-repeat: no-repeat;
     transition: 0.3s ease-in-out;
@@ -34,7 +35,7 @@ transform: rotate(360deg);
   }
 
   .header.dark .logo{
-    background-image: url("/public/court-booking-dark.png");
+    background-image: url("court-booking-dark.png");
   }
 
 /* --text: #0d0e0b;

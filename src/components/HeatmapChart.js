@@ -66,7 +66,10 @@ function HeatmapChart({ reservations, courtData, value, index }) {
       const key = `${date}_${
         courtData.find((court) => court.name === courtName).id
       }`;
-      return reservationCounts[key]?.reservedHours || 0;
+      return reservationCounts[key] && reservationCounts[key].reservedHours !== undefined
+      ? reservationCounts[key].reservedHours
+      : 0;
+    
     }),
   }));
 

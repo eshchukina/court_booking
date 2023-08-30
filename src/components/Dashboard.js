@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+// import { AnimatePresence } from 'framer-motion';
 
 import config from "../config";
 
@@ -251,11 +252,11 @@ useEffect(() => {
     : "";
 
   return (
-    <motion.div
-    initial={{ opacity: 0, y: -10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-  >
+  //   <motion.div
+  //   initial={{ opacity: 0, y: -10 }}
+  //   animate={{ opacity: 1, y: 0 }}
+  //   transition={{ duration: 0.5 }}
+  // >
     <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
         <div className="wrapper-dashboard">
@@ -397,7 +398,8 @@ useEffect(() => {
         </div>
       </div>
     </div>
-    </motion.div>
+    /* </motion.div> */
+
   );
 };
 export default Dashboard;

@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+// import { AnimatePresence } from 'framer-motion';
 
 import "./Style.css";
 import "./Dashboard.css";
@@ -7,11 +8,11 @@ import "./Info.css";
 
 const Info = ({ isDarkMode, toggleTheme, setCurrentComponent }) => {
   return (
-    <motion.div
-    initial={{ opacity: 0, y: -10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-  >
+  //   <motion.div
+  //   initial={{ opacity: 0, y: -10 }}
+  //   animate={{ opacity: 1, y: 0 }}
+  //   transition={{ duration: 0.5 }}
+  // >
     <div className={`info ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
         <div className="wrapper-dashboard">
@@ -50,7 +51,7 @@ const Info = ({ isDarkMode, toggleTheme, setCurrentComponent }) => {
         </div>
       </div>
     </div>
-    </motion.div>
+    // </motion.div>
   );
 };
 export default Info;

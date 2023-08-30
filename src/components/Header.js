@@ -312,7 +312,11 @@ const Header = ({
         </div>
         {/* <div class="ball"></div> */}
         <div className="logo-wrapper">
-          <div className="logo"> </div>
+          <div className="logo">
+          {/* <img src="court-booking.png" height={150} alt="" /> */}
+
+
+          </div>
         </div>
         <div className="login-wrapper">
           <LoginButton
