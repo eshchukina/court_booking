@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-// import { motion } from "framer-motion";
-// import { AnimatePresence } from 'framer-motion';
+import { motion } from "framer-motion";
+
 
 import config from "../config";
 
 import "./Style.css";
 import "./Dashboard.css";
+import WeatherChart from "./WeatherChart";
 
 const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const [showFireworks, setShowFireworks] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [bookingFail, setBookingFail] = useState(false);
+  const [selectedWeatherDay, setSelectedWeatherDay] = useState("");
+
 
   const [selectedCourt, setSelectedCourt] = useState("");
   const [courtOptions, setCourtOptions] = useState([]); // New state variable for court options
@@ -90,6 +93,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     } catch (error) {
       console.log("Error fetching account data:", error);
     }
+    
   };
   useEffect(() => {
     fetchAccountData();
@@ -109,6 +113,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const handleDaySelectionChange = (e) => {
     const selectedDayValue = e.target.value;
     setSelectedDay(selectedDayValue);
+    setSelectedWeatherDay(selectedDayValue); 
     setSelectedHour(""); // Reset selected hour when day changes
     if (selectedCourt && selectedDayValue) {
       fetchReservationData(selectedCourt, selectedDayValue);
@@ -253,11 +258,11 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     : "";
 
   return (
-  //   <motion.div
-  //   initial={{ opacity: 0, y: -10 }}
-  //   animate={{ opacity: 1, y: 0 }}
-  //   transition={{ duration: 0.5 }}
-  // >
+    <motion.div
+    initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
     <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
         <div className="wrapper-dashboard">
@@ -398,8 +403,10 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
           )}
         </div>
       </div>
+      <WeatherChart selectedDay={selectedWeatherDay} 
+       isDarkMode={isDarkMode}/>
     </div>
-    /* </motion.div> */
+   </motion.div> 
 
   );
 };

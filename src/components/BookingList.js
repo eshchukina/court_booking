@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HeatmapChart from "./HeatmapChart";
-// import { motion } from "framer-motion";
+ import { motion } from "framer-motion";
 // import { AnimatePresence } from 'framer-motion';
 
 import config from "../config";
@@ -178,11 +178,11 @@ const BookingList = ({ isDarkMode, account }) => {
     : "";
 
   return (
-  //   <motion.div
-  //   initial={{ opacity: 0, y: -10 }}
-  //   animate={{ opacity: 1, y: 0 }}
-  //   transition={{ duration: 0.5 }}
-  // >
+    <motion.div
+    initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+  >
     <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
         <div className="wrapper-dashboard">
@@ -273,7 +273,7 @@ const BookingList = ({ isDarkMode, account }) => {
         <HeatmapChart reservations={reservations} courtData={courtData} />
       ) : null}
     </div>
-    //  </motion.div>
+      </motion.div>
   );
 };
 export default BookingList;

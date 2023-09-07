@@ -1,0 +1,94 @@
+
+
+/* .recharts-legend-item-text{
+   color: #756685!important;
+   fill: #756685;
+}
+
+
+.recharts-cartesian-axis-tick-value{
+   fill: #756685;
+} */
+
+.weather-chart
+{
+margin: 10px auto 0;
+
+}
+
+
+tspan{
+    font-size: 10px;
+  
+}
+
+.weather-chart.dark tspan{
+    fill: #e0e4dc;
+
+}
+/* WeatherChart.css */
+
+.recharts-legend-item-text {
+    color: #756685 !important;
+}
+
+.weather-chart.dark .recharts-legend-item-text{
+
+    color: #e0e4dc !important;
+
+}
+
+
+
+line{
+ 
+    stroke: #a1a1a1  !important;
+}
+
+
+.weather-chart {
+    margin: 10px auto 0;
+}
+
+@media (max-width: 650px) {
+    .weather-chart
+{
+margin: 30px auto 0;
+font-size: 15px;
+
+}.recharts-legend-wrapper{
+  
+    font-size: 12px;
+    padding: 0 0 0 20px;
+}
+
+}
+
+
+@media (max-width: 520px) {
+    .weather-chart
+{
+margin: 5px auto 0;
+font-size: 15px;
+position: relative;
+right:25px;
+}
+
+
+}
+
+@media (max-width: 400px) {
+    .weather-chart
+{
+margin: 0;
+font-size: 12px;
+position: relative;
+right:25px;
+
+}
+
+
+
+
+
+}

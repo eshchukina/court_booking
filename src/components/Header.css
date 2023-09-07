@@ -5,7 +5,7 @@
     background-image: url("court-booking.png");
     background-size: contain;
     background-repeat: no-repeat;
-    transition: 0.3s ease-in-out;
+    /* transition: 0.3s ease-in-out; */
     padding: 100px;
    
 }
@@ -15,19 +15,17 @@
 
 transform: rotate(360deg); 
 }
-/* .logo:hover {
+.logo:hover {
     transition: 0.3s ease-in-out;
 
-    background-image: url("/public/logo-hover.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+   
    
  
 
-  } */
+  }
   
   .login-wrapper{
-    transition: 0.3s ease-in-out;
+    /* transition: 0.3s ease-in-out; */
 
      background-size: contain;
     background-repeat: no-repeat;
