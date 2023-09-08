@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-
 import config from "../config";
 
 import "./Style.css";
@@ -17,7 +16,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
 
   const [selectedCourt, setSelectedCourt] = useState("");
-  const [courtOptions, setCourtOptions] = useState([]); // New state variable for court options
+  const [courtOptions, setCourtOptions] = useState([]); 
 
   const [selectedDay, setSelectedDay] = useState("");
   const [selectedHour, setSelectedHour] = useState("");
@@ -53,13 +52,12 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   useEffect(() => {
     if (selectedCourt && selectedDay) {
       fetchReservationData(selectedCourt, selectedDay);
-    }// eslint-disable-next-line react-hooks/exhaustive-deps
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCourt, selectedDay]);
-  
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -99,7 +97,6 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     } catch (error) {
       console.log("Error fetching account data:", error);
     }
-    
   };
   useEffect(() => {
     fetchAccountData();
@@ -108,7 +105,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const handleCourtSelectionChange = (e) => {
     const selectedCourtId = e.target.value;
     setSelectedCourt(selectedCourtId);
-    setSelectedHour(""); // Reset selected hour when court changes
+    setSelectedHour(""); 
 
     if (selectedCourtId && selectedDay) {
       fetchReservationData(selectedCourtId, selectedDay);
@@ -119,8 +116,8 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const handleDaySelectionChange = (e) => {
     const selectedDayValue = e.target.value;
     setSelectedDay(selectedDayValue);
-    setSelectedWeatherDay(selectedDayValue); 
-    setSelectedHour(""); // Reset selected hour when day changes
+    setSelectedWeatherDay(selectedDayValue);
+    setSelectedHour(""); 
     if (selectedCourt && selectedDayValue) {
       fetchReservationData(selectedCourt, selectedDayValue);
     }
@@ -128,7 +125,6 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   };
 
   const fetchReservationData = async (courtId, day) => {
-    
     try {
       const token = localStorage.getItem("accessToken");
       const headersWithToken = {
@@ -164,19 +160,22 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     }
   };
 
-
-
-
   const handleShowFireworks = () => {
     setTimeout(() => {
       setShowFireworks(false);
-    }, 1500); // 5000 milliseconds = 5 seconds
+    }, 1500); 
   };
 
   const formatTime = (isoTime) => {
     const date = new Date(isoTime);
-    const hours = date.getUTCHours().toString().padStart(2, "0");
-    const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+    const hours = date
+      .getUTCHours()
+      .toString()
+      .padStart(2, "0");
+    const minutes = date
+      .getUTCMinutes()
+      .toString()
+      .padStart(2, "0");
     return `${hours}:${minutes}`;
   };
 
@@ -221,7 +220,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
       }
 
       const reservation = {
-        id: selectedTimeSlot.id, // Use the ID from the fetched data
+        id: selectedTimeSlot.id, 
         court_id: parseInt(selectedCourt),
         date: selectedDay,
         start_time: selectedTimeSlot.start_time,
@@ -243,7 +242,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
         return;
       }
 
-      // Update the reservationData state to mark the selected time slot as busy
+     
       const updatedReservationData = reservationData.map((timeSlot) =>
         timeSlot.start_time === selectedHour
           ? { ...timeSlot, booked: true }
@@ -269,157 +268,164 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
 
   return (
     <motion.div
-    initial={{ opacity: 0, y: -10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-  >
-    <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
-      <div className="container">
-        <div className="wrapper-dashboard">
-          {userName ? (
-            <div className="personalName">Hello, {formattedUserName}!</div>
-          ) : (
-            <div className="personalName">
-              Welcome to our Tennis Court Booking App!
-            </div>
-          )}
-          <div className="box-wrapper">
-            <select value={selectedCourt} onChange={handleCourtSelectionChange}>
-              <option>court name</option>
-              {courtOptions.map((option) => (
-                <option key={option.id} value={option.id}>
-                  {option.name}
-                </option>
-              ))}
-            </select>
-
-            <select value={selectedDay} onChange={handleDaySelectionChange}>
-              <option>choose a date</option>
-              {dateOptions.map((date, index) => (
-                <option key={index} value={date}>
-                  {new Date(date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "2-digit",
-                    day: "2-digit",
-                  })}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="dashboard-wrapper">
-            <div className="table-container">
-              <table>
-                <thead>
-                  <tr></tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div className="time-buttons-column">
-{reservationData
-  .filter((option) => option.date === selectedDay)
-  .map((timeSlot, index) => (
-    <button
-      key={timeSlot.id}
-      onClick={() => {
-        if (!timeSlot.booked) {
-          setSelectedHour(timeSlot.start_time);
-          setTimeSelectionManual(true);
-          setSelectedButtonIndex(index); // Set the selected button index
-        }
-      }}
-      className={`time-button ${
-        timeSlot.booked ? "busy-time" : "free-time"
-      } ${
-        selectedButtonIndex === index ? "selected-button selected-button-color" : ""
-      }`}
-      disabled={timeSelectionManual && selectedHour !== timeSlot.start_time}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      {formatTime(timeSlot.start_time)} - {formatTime(timeSlot.end_time)}{" "}
-      {timeSlot.booked ? " " : " "}
-    </button>
-  ))}
+      <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
+        <div className="container">
+          <div className="wrapper-dashboard">
+            {userName ? (
+              <div className="personalName">Hello, {formattedUserName}!</div>
+            ) : (
+              <div className="personalName">
+                Welcome to our Tennis Court Booking App!
+              </div>
+            )}
+            <div className="box-wrapper">
+              <select
+                value={selectedCourt}
+                onChange={handleCourtSelectionChange}
+              >
+                <option>court name</option>
+                {courtOptions.map((option) => (
+                  <option key={option.id} value={option.id}>
+                    {option.name}
+                  </option>
+                ))}
+              </select>
 
+              <select value={selectedDay} onChange={handleDaySelectionChange}>
+                <option>choose a date</option>
+                {dateOptions.map((date, index) => (
+                  <option key={index} value={date}>
+                    {new Date(date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                    })}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-
-                      </div>
-                    </td>
-                  </tr>
-
-                  {userName ? (
+            <div className="dashboard-wrapper">
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr></tr>
+                  </thead>
+                  <tbody>
                     <tr>
                       <td>
-                        <button
-                          className="custom-btnBooking btn_booking"
-                          title="booking"
-                          onClick={() => {
-                            if (
-                              window.confirm(
-                                "Are you sure you want to make a booking?"
-                              )
-                            ) {
-                              handleShowFireworks();
-                              reserveSlot();
-                              fetchAccountData();
-                              fetchReservationData();
-                            }
-                            fetchAccountData();
-                            fetchReservationData();
-                          }}
-                        >
-                          {/* <FontAwesomeIcon icon={faCheck} /> */}
-                          booking
-                        </button>
+                        <div className="time-buttons-column">
+                          {reservationData
+                            .filter((option) => option.date === selectedDay)
+                            .map((timeSlot, index) => (
+                              <button
+                                key={timeSlot.id}
+                                onClick={() => {
+                                  if (!timeSlot.booked) {
+                                    setSelectedHour(timeSlot.start_time);
+                                    setTimeSelectionManual(true);
+                                    setSelectedButtonIndex(index); 
+                                  }
+                                }}
+                                className={`time-button ${
+                                  timeSlot.booked ? "busy-time" : "free-time"
+                                } ${
+                                  selectedButtonIndex === index
+                                    ? "selected-button selected-button-color"
+                                    : ""
+                                }`}
+                                disabled={
+                                  timeSelectionManual &&
+                                  selectedHour !== timeSlot.start_time
+                                }
+                              >
+                                {formatTime(timeSlot.start_time)} -{" "}
+                                {formatTime(timeSlot.end_time)}{" "}
+                                {timeSlot.booked ? " " : " "}
+                              </button>
+                            ))}
+                        </div>
                       </td>
                     </tr>
-                  ) : (
-                    <div className="personalName">
-                      {" "}
-                      Register and book tennis courts!
-                    </div>
-                  )}
-                </tbody>
-              </table>
+
+                    {userName ? (
+                      <tr>
+                        <td>
+                          <button
+                            className="custom-btnBooking btn_booking"
+                            title="booking"
+                            onClick={() => {
+                              if (
+                                window.confirm(
+                                  "Are you sure you want to make a booking?"
+                                )
+                              ) {
+                                handleShowFireworks();
+                                reserveSlot();
+                                fetchAccountData();
+                                fetchReservationData();
+                              }
+                              fetchAccountData();
+                              fetchReservationData();
+                            }}
+                          >
+                            {/* <FontAwesomeIcon icon={faCheck} /> */}
+                            booking
+                          </button>
+                        </td>
+                      </tr>
+                    ) : (
+                      <div className="personalName">
+                        {" "}
+                        Register and book tennis courts!
+                      </div>
+                    )}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-          <div>
-            {bookingSuccess && (
-              <>
-                <p className="booking-message">
-                  Booking done! You can view the list of your bookings in the
-                  application's sidebar menu{" "}
-                </p>
-              </>
+            <div>
+              {bookingSuccess && (
+                <>
+                  <p className="booking-message">
+                    Booking done! You can view the list of your bookings in the
+                    application's sidebar menu{" "}
+                  </p>
+                </>
+              )}
+            </div>
+
+            <div>
+              {bookingFail && (
+                <>
+                  <p className="booking-message">Failed to book slot </p>
+                </>
+              )}
+            </div>
+
+            {showFireworks && (
+              <div className="fireworks">
+                <div className="firework"></div>
+                <div className="firework"></div>
+                <div className="firework"></div>
+                <div className="firework"></div>
+                <div className="firework"></div>
+                <div className="firework"></div>
+                <div className="firework"></div>
+              </div>
             )}
           </div>
-
-          <div>
-            {bookingFail && (
-              <>
-                <p className="booking-message">Failed to book slot </p>
-              </>
-            )}
-          </div>
-
-          {showFireworks && (
-            <div className="fireworks">
-              <div className="firework"></div>
-              <div className="firework"></div>
-              <div className="firework"></div>
-              <div className="firework"></div>
-              <div className="firework"></div>
-              <div className="firework"></div>
-              <div className="firework"></div>
-            </div>
-          )}
         </div>
+        <WeatherChart
+          selectedDay={selectedWeatherDay}
+          isDarkMode={isDarkMode}
+        />
       </div>
-      <WeatherChart selectedDay={selectedWeatherDay} 
-       isDarkMode={isDarkMode}/>
-    </div>
-   </motion.div> 
-
+    </motion.div>
   );
 };
 export default Dashboard;

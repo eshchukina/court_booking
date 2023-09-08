@@ -51,7 +51,7 @@ function App() {
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
         setCurrentComponent={setCurrentComponent}
-        currentComponent={currentComponent} // Pass the currentComponent prop here
+        currentComponent={currentComponent} 
         headersWithToken={headersWithToken}
       />
       <div

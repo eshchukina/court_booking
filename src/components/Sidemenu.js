@@ -9,7 +9,7 @@ import {
 import "./Sidemenu.css";
 import "./Style.css";
 
-const Sidemenu = ({ isDarkMode, setCurrentComponent}) => {
+const Sidemenu = ({ isDarkMode, setCurrentComponent }) => {
   return (
     <div className={`sidemenu ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
@@ -27,7 +27,7 @@ const Sidemenu = ({ isDarkMode, setCurrentComponent}) => {
               className="sidemenu-item sidemenu-item--projects"
               onClick={() => setCurrentComponent("BookingList")}
             >
-              <FontAwesomeIcon icon={ faUser} className="itemSide two" />
+              <FontAwesomeIcon icon={faUser} className="itemSide two" />
               <p>my bookings</p>
             </div>
             <div

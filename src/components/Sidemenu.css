@@ -1,264 +1,196 @@
-
-.wrapper-sidemenu{
+.wrapper-sidemenu {
   transition: 0.5s;
+  height: 100px;
+  align-items: center;
+  margin: 10px auto;
+  cursor: pointer;
+}
+.sidemenu {
+  /* width: 50px;
+    height: 300px; */
+  margin-left: 5%;
+  position: fixed;
+  top: 20%;
+  left: 20px;
+  z-index: 1;
+}
+.sidemenu p:hover {
+  color: #b2d957;
+}
+
+.itemSide {
+  position: relative;
+  left: 11px;
+  font-size: 25px;
+}
+
+.two {
+  position: relative;
+  left: 14px;
+}
+
+.itemSideLast {
+  cursor: help;
+  font-size: 28px;
+  position: relative;
+}
+
+.sidemenu-item {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12.4px;
+  border-radius: 100px;
+  background-color: #756685;
+  z-index: 2;
+  transition: width 0.25s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  color: #e0e4dc;
+}
+
+.sidemenu.dark .arrow {
+  color: #e0e4dc;
+}
+
+.arrow {
+  color: #756685;
+
+  position: absolute;
+  left: 60px;
+  top: 15px;
+  animation: blink 1s infinite;
+  font-size: 20px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: none;
+}
+
+.sidemenu-item:hover {
+  width: 160px;
+  cursor: pointer;
+  color: #b2d957;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.sidemenu.dark .sidemenu-item:hover {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(85, 53, 91, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.sidemenu-item:hover p {
+  opacity: 100;
+  transform: translateX(50px);
+  z-index: 1;
+  font-size: 15px;
+  position: relative;
+  right: 5px;
+}
+.sidemenu-item:hover .sidemenu-icon {
+  width: 35px;
+  margin-left: 7.5px;
+}
+.sidemenu-icon {
+  width: 30px;
+  margin-left: 5px;
+  position: absolute;
+  z-index: 2;
+
+  transition: all 0.15s ease-in-out;
+}
+
+.sidemenu-icon:hover {
+  color: #b2d957;
+}
+
+.sidemenu p {
+  color: #e0e4dc;
+  opacity: -100;
+  transform: translateX(0px);
+  /* font-family: "Open Sans", sans-serif; */
+  text-decoration: none;
+
+  transition: 0.25s ease-in-out;
+}
+
+@media (max-width: 1500px) {
+  .wrapper-sidemenu {
+    transition: 0.5s;
     height: 100px;
     align-items: center;
     margin: 10px auto;
     cursor: pointer;
-
-    
-}
+  }
   .sidemenu {
-    /* width: 50px;
-    height: 300px; */
     margin-left: 5%;
     position: fixed;
-    top: 20%;
+    top: 13%;
     left: 20px;
-z-index: 1;
-
-    
-   
-  }
-  .sidemenu p:hover {
-
-    color: #b2d957; 
-
-  }
-
-  .itemSide{
-    position: relative;
-    left:11px;
-    font-size: 25px;
-
-  }
-
-  .two{
-    position: relative;
-    left:14px;
-   
-
-  }
-
-
-
- .itemSideLast{
-   cursor:help;
-    font-size: 28px;
-    position: relative;
- }
-
-  .sidemenu-item {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 12.4px;
-    border-radius: 100px;
-    background-color: #756685;
-z-index: 2;
-    transition: width 0.25s ease-in-out;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    color: #e0e4dc;
-  }
-
-
-  .sidemenu.dark .arrow{
-    color: #e0e4dc;
-
-
-  }
-
-  .arrow {
-    color: #756685;
-
- position: absolute;
- left:60px;
- top: 15px;
-    animation: blink 1s infinite;
-    font-size: 20px;
-}
-
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-}
-.hidden{
-  display: none;
-}
-.visible{
-  display: none;
-
-}
-
-
-  
-  .sidemenu-item:hover {
- 
-    width: 160px;
-    cursor: pointer;
-    color: #b2d957; 
-    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-inset -4px -4px 6px 0 rgba(255,255,255,.2),
-inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-  }
-
-
-
-
-  .sidemenu.dark .sidemenu-item:hover{
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
-    -4px -4px 6px 0 rgba(85, 53, 91, 0.5),
-    inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
-    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-  }
-
-
-
-
-  .sidemenu-item:hover p {
-    opacity: 100;
-    transform: translateX(50px);
     z-index: 1;
-font-size: 15px;
-position: relative;
-right: 5px;
   }
-  .sidemenu-item:hover .sidemenu-icon {
-    width: 35px;
-    margin-left: 7.5px;
- 
-  }
-  .sidemenu-icon {
-    width: 30px;
-    margin-left: 5px;
-    position: absolute;
-    z-index: 2;
-
-    transition: all 0.15s ease-in-out;
-  }
-
-
-  .sidemenu-icon:hover
-  
-  
-  
-  {
-    color: #b2d957; 
-  }
-  
-
-  .sidemenu p {
-    color:  #e0e4dc;
-    opacity: -100;
-    transform: translateX(0px);
-    /* font-family: "Open Sans", sans-serif; */
-    text-decoration: none;
-
-    transition: 0.25s ease-in-out;
- 
-  }
-
-
-
-  @media (max-width: 1500px) {
-
-    .wrapper-sidemenu{
-      transition: 0.5s;
-        height: 100px;
-        align-items: center;
-        margin: 10px auto;
-        cursor: pointer;
-    
-        
-    }
-      .sidemenu {
-    
-        margin-left: 5%;
-        position: fixed;
-        top: 13%;
-        left: 20px;
-    z-index: 1;
-    
-        
-       
-      }
-
-  }
-  @media (max-width: 600px) {
-
+}
+@media (max-width: 600px) {
   .sidemenu {
- 
-      height: 50px;
-      margin-left: 2%;
-      position: fixed;
-      top: 14%;
-      left: 0px;
-  z-index: 1;
-      
-     
-  
-    
-   
+    height: 50px;
+    margin-left: 2%;
+    position: fixed;
+    top: 14%;
+    left: 0px;
+    z-index: 1;
   }
+}
+@media (max-width: 450px) {
+  .sidemenu {
+    margin: 0 0 0 23px;
+    top: 12%;
   }
-  @media (max-width: 450px) {
-    .sidemenu {
- 
-   margin: 0 0 0 23px ;
-      top: 12%;
-    
-      
-     
-  
-    
-   
+  .sidemenu-item {
+    width: 40px;
+    height: 40px;
   }
-    .sidemenu-item {
-      width: 40px;
-      height: 40px;
-    
-   
-     
-    }
-    .itemSide{
-      position: relative;
-      left:8px;
-      font-size: 20px;
-  
-    }
-   .itemSideLast{
-     
-      font-size: 25px;
-   }
-
-   .two{
-    
-    left:10px;
-   
-
+  .itemSide {
+    position: relative;
+    left: 8px;
+    font-size: 20px;
+  }
+  .itemSideLast {
+    font-size: 25px;
   }
 
-    }
+  .two {
+    left: 10px;
+  }
+}
 
+.flash {
+  animation: flashAnimation 1s infinite;
+}
 
-
-    .flash {
-      animation: flashAnimation 1s infinite;
-    }
-    
-    @keyframes flashAnimation {
-      0%, 100% {
-        background-color: transparent;
-      }
-      50% {
-        background-color: yellow; /* Change this to your desired flashing color */
-      }
-    }
-    
+@keyframes flashAnimation {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: yellow; /* Change this to your desired flashing color */
+  }
+}

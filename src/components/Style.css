@@ -1,103 +1,78 @@
-
 /* --text: #0d0e0b;
 --background: #f7f8f6;
 --primary: #756685;
 --secondary: #e0e4dc;
 --accent: #a2e85d; */
 
-
-
 .container {
-    max-width: 1200px;
-    padding: 0 10px;
-    margin: 0 auto;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    height: 100%;
-    transition: transform 0.3s ease-in-out;
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
 
-   
-  
-  }
+.logo-wrapper {
+  height: 100px;
+  align-items: center;
+  margin: 10px auto;
+}
 
+.theme-wrapper {
+  height: 100px;
+  align-items: center;
+  margin: 10px;
+}
 
+.login-wrapper {
+  height: 100px;
+  align-items: center;
+  margin: 10px;
+}
 
-  .logo-wrapper {
-
-    height: 100px;
-    align-items: center;
-    margin: 10px auto;
-  
-  }
-  
-  .theme-wrapper {
-
-    height: 100px;
-    align-items: center;
-    margin: 10px;
-
-  }
-  
-  .login-wrapper {
- 
-    height: 100px;
-    align-items: center;
-    margin: 10px;
-   
-  }
-  
-
-  
 .modalWindow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 999999;
-    transition: 0.5s;
-    background-size: 200% auto;
-    
-  
-  }
+  transition: 0.5s;
+  background-size: 200% auto;
+}
 
-  .header.dark .modalText{
-    background-color: #b8bbc4;
+.header.dark .modalText {
+  background-color: #b8bbc4;
+}
 
-  }
-  
+.buttonCLose {
+  background-color: #a2e85d !important;
+  color: #756685 !important;
+}
 
-  .buttonCLose{
-    background-color:#a2e85d!important;
-    color:#756685!important;;
+.buttonCLose:hover {
+  color: white !important;
+}
+.modalContent {
+  background-color: #e0e4dc;
+  padding: 20px;
+  border-radius: 4px;
+  width: auto;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #3c4049;
+  z-index: 999999999999;
+  text-align: center;
+  color: #756685;
+}
 
-  }
-
-  .buttonCLose:hover{
-color: white!important;
-
-
-  }
-  .modalContent {
-    background-color: #e0e4dc;
-    padding: 20px;
-    border-radius: 4px;
-    width: auto;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: #3c4049;
-   z-index: 999999999999;
-   text-align: center;
-   color: #756685;
-   
-  }
-
- 
 .modalContent.dark,
 .modalContent.dark select,
 .modalContent.dark input[type="text"],
@@ -105,8 +80,6 @@ color: white!important;
 .modalContent.dark input[type="number"],
 .modalContent.dark input[type="date"] {
   background-color: #b8bbc4;
-  
-  
 }
 
 .modalContent select,
@@ -117,134 +90,102 @@ color: white!important;
 .modalContent input[type="password"] {
   padding: 6px;
   font-size: 14px;
-background-color: #e0e4dc;
+  background-color: #e0e4dc;
 
   border: none;
   border-radius: 10px;
   margin: 10px;
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-inset -4px -4px 6px 0 rgba(255,255,255,.2),
-inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
- 
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
 }
-
 
 .modalBtn :hover,
 button.modalBtn:hover,
 .modalButtonLog:hover,
 .modalButtonLog:hover,
 .modalButton:hover,
-.modalButtonLog.light:hover, 
-.modalButtonLog.dark:hover
-
-
-
-{
-  color: #b2d957; 
+.modalButtonLog.light:hover,
+.modalButtonLog.dark:hover {
+  color: #b2d957;
 }
 
+.modalBtn {
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 16px;
 
-.modalBtn{
-    padding: 5px 10px;
-    margin: 5px;
-    font-size: 16px;
-  
-  
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.5s;
-    background-size: 200% auto;
-    border-radius: 10px;
-  
-  }
-  
-  .modalBtn.dark{
-    color: #fff;
-    background-color: #455e63;
-  }
-  
-  .modalBtn.light{
-    background-color: #9dafb4;
-  }
-  button.modalBtn:hover {
-    background-position: right center;
-    
-  }
-  
-  .modalButton {
-    padding: 5px;
-    font-size: 16px;
-  
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    left: 50%;
-    margin: 0;
-    transform: translateX(-50%);
-    transition: 0.5s;
-    box-shadow: 0px 2px 4px #81858e;
-  }
-  
-  
-  .modalButtonLog:active {box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.2),
-    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);}
-    
-  
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+}
 
+.modalBtn.dark {
+  color: #fff;
+  background-color: #455e63;
+}
 
+.modalBtn.light {
+  background-color: #9dafb4;
+}
+button.modalBtn:hover {
+  background-position: right center;
+}
 
+.modalButton {
+  padding: 5px;
+  font-size: 16px;
 
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+  margin: 0;
+  transform: translateX(-50%);
+  transition: 0.5s;
+  box-shadow: 0px 2px 4px #81858e;
+}
 
-
-
+.modalButtonLog:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
 
 /* 
 .modalLogin input{
   color: #e0e4dc;
 } */
 
+.modalButton.dark {
+  background-color: #edf4f6;
+}
 
+.modalButton.light {
+  color: #fff;
+  background-color: #9dafb4;
+}
 
+.expandable-description {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.expandable-description.expanded {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+}
 
-
-
-
-
-    
-  
-  .modalButton.dark {
-    background-color: #edf4f6;
-  
-  }
-  
-  .modalButton.light{
-    color: #fff;
-    background-color: #9dafb4;
-  }
-  
-  .expandable-description {
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .expandable-description.expanded {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: initial;
-  }
-  
-  
-  
-  
-  /* .modalButtonLog {
+/* .modalButtonLog {
     box-shadow: 0px 2px 4px #81858e;
     padding: 5px 10px;
     font-size: 16px;
@@ -260,132 +201,92 @@ button.modalBtn:hover,
   }
      */
 
-
-
-  .modalButtonLog{
-    background: #756685;
-    border: none;
-    cursor: pointer;
-    margin-right: 0px;
-    padding: 10px;
-    border-radius:5px;
-    
- 
-  }
-  
-  .custom-btnBooking.btn_booking.modalButtonLog{
-    padding: 10px;
-  }
-
-      .modalButtonLog:before {
-        height: 0%;
-        width: 2px;
-      }
-     
-    
-      .modalButtonLog:hover {
-        box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-          inset -4px -4px 6px 0 rgba(255,255,255,.2),
-          inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  .modalButtonLog.light:active, 
-  .modalButtonLog.dark:active
-   {
-    
-    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.2),
-    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);}
-    
-
-
-  
-  .modalButtonLog.dark{
-    
-    color: #ffffff;
-    box-shadow: 0px 2px 4px #81858e;
-  }
-  
-  .modalButtonLog.light{
-    background-color: #756685;
-    color: #fff;
-    box-shadow: 0px 2px 4px #81858e;
-  }
-
-
-  .modalContent.dark input[type="email"],
-  .modalContent.dark input[type="password"] {
-    background-color: #b8bbc4;
-  }
-  .modalLogin{
-    z-index: 999990000;
-  
-  }
-  
-  .modalLogin form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  
-  .modalLogin form input {
-    margin-bottom: 10px;
-  }
-  
-  .modalLogin{
-    padding: 40px;
-  }
-  
-  .modalLogin h3 {
-    text-align: center;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-  @media (max-width: 390px) {
-
-
-  .modalContent select,
-.modalContent input[type="text"],
-.modalContent input[type="number"],
-.modalContent input[type="date"],
-.modalContent input[type="email"],
-.modalContent input[type="password"] {
-  padding: 6px;
-  font-size: 14px;
-background-color: #e0e4dc;
-
-  border: 1px solid  #756685;
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-inset -4px -4px 6px 0 rgba(255,255,255,.2),
-inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
- 
+.modalButtonLog {
+  background: #756685;
+  border: none;
+  cursor: pointer;
+  margin-right: 0px;
+  padding: 10px;
+  border-radius: 5px;
 }
+
+.custom-btnBooking.btn_booking.modalButtonLog {
+  padding: 10px;
+}
+
+.modalButtonLog:before {
+  height: 0%;
+  width: 2px;
+}
+
+.modalButtonLog:hover {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.modalButtonLog.light:active,
+.modalButtonLog.dark:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.modalButtonLog.dark {
+  color: #ffffff;
+  box-shadow: 0px 2px 4px #81858e;
+}
+
+.modalButtonLog.light {
+  background-color: #756685;
+  color: #fff;
+  box-shadow: 0px 2px 4px #81858e;
+}
+
+.modalContent.dark input[type="email"],
+.modalContent.dark input[type="password"] {
+  background-color: #b8bbc4;
+}
+.modalLogin {
+  z-index: 999990000;
+}
+
+.modalLogin form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalLogin form input {
+  margin-bottom: 10px;
+}
+
+.modalLogin {
+  padding: 40px;
+}
+
+.modalLogin h3 {
+  text-align: center;
+}
+
+@media (max-width: 390px) {
+  .modalContent select,
+  .modalContent input[type="text"],
+  .modalContent input[type="number"],
+  .modalContent input[type="date"],
+  .modalContent input[type="email"],
+  .modalContent input[type="password"] {
+    padding: 6px;
+    font-size: 14px;
+    background-color: #e0e4dc;
+
+    border: 1px solid #756685;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+      -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
   }
+}

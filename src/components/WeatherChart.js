@@ -8,13 +8,13 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { useMediaQuery } from "react-responsive"; // Импортируйте useMediaQuery
+import { useMediaQuery } from "react-responsive";
 
 import "./WeatherChart.css";
 
-const WeatherChart = ({isDarkMode}) => {
+const WeatherChart = ({ isDarkMode }) => {
   const [weatherData, setWeatherData] = useState([]);
-  const isMobile = useMediaQuery({ maxWidth: 750 }); // Определите, является ли экран мобильным
+  const isMobile = useMediaQuery({ maxWidth: 750 });
   const isMobileView = useMediaQuery({ maxWidth: 400 });
   useEffect(() => {
     fetch(
@@ -22,23 +22,19 @@ const WeatherChart = ({isDarkMode}) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        // Извлечь данные о температуре и ощущаемой температуре
         const temperatureData = data.hourly.temperature_2m;
         const apparentTemperatureData = data.hourly.apparent_temperature;
         const timeData = data.hourly.time;
 
-        // Создать множество для хранения уникальных дат
         const uniqueDates = new Set();
 
         const formattedData = timeData.map((time, index) => {
-          // Разделить строку времени по "T" и выбрать только дату (первая часть)
           const date = time.split("T")[0];
 
-          // Добавить дату в множество уникальных дат
           uniqueDates.add(date);
 
           return {
-            date, // Использовать отформатированную дату
+            date,
             temperature_2m: temperatureData[index],
             apparent_temperature: apparentTemperatureData[index],
           };
@@ -48,22 +44,19 @@ const WeatherChart = ({isDarkMode}) => {
       });
   }, []);
 
-  let chartWidth = 800; // Значение по умолчанию для более широкого экрана
-  let chartHeight = 140; // Значение по умолчанию для высоты
+  let chartWidth = 800;
+  let chartHeight = 140;
 
   if (isMobile) {
-    chartWidth = 400; // Для мобильного экрана
-    chartHeight = 130; // Для мобильного экрана
+    chartWidth = 400;
+    chartHeight = 130;
   } else if (isMobileView) {
-    chartWidth = 200; // Для очень узкого экрана
-    chartHeight = 100; // Для очень узкого экрана
+    chartWidth = 200;
+    chartHeight = 100;
   }
-
 
   return (
     <div className="container">
-    
-
       <div className={`weather-chart ${isDarkMode ? "dark" : "light"}`}>
         <LineChart width={chartWidth} height={chartHeight} data={weatherData}>
           <CartesianGrid strokeDasharray="3 3" />

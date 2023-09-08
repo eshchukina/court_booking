@@ -2,41 +2,38 @@
   max-width: 100%;
   overflow-x: auto;
   padding: 20px;
-  overflow-y: auto; 
+  overflow-y: auto;
   text-align: center;
-  max-height: 250px; 
-  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
-  -4px -4px 6px 0 rgba(116, 125, 136, .5),
-  inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
-  inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-border: none;
-border-radius:20px;
+  max-height: 250px;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 20px;
 }
 
-.dashboard.dark .table-container{
-  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
-  -4px -4px 6px 0 rgba(85, 53, 91, 0.5),
-  inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
-  inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+.dashboard.dark .table-container {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(85, 53, 91, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
 }
-
 
 .bookingList table {
-text-align: center;
-padding: 0;
-margin: 0 50px;
- 
+  text-align: center;
+  padding: 0;
+  margin: 0 50px;
 }
 
-
-th{
+th {
   padding: 0px;
 }
 
 td {
   padding: 5px 10px;
   text-align: center;
-  
+
   text-align: center;
 }
 
@@ -45,60 +42,40 @@ td {
   font-size: 18px;
 }
 
-.visible{
+.visible {
   display: flex;
-
 }
-.visible:hover{
-  color:#b2d957; 
-
-
+.visible:hover {
+  color: #b2d957;
 }
 
-.line{
-
+.line {
   text-decoration: line-through;
-
 }
-.not-visible{
-  display:none;
-
+.not-visible {
+  display: none;
 }
 .table-container::-webkit-scrollbar {
   width: 0px;
 }
 
-
-
-
 @media (max-width: 650px) {
+  td {
+    padding: 5px 0px;
+    text-align: center;
 
-
-td {
-  padding: 5px 0px;
-  text-align: center;
-  
-  text-align: center;
+    text-align: center;
+  }
 }
-
-}
-
-
 
 @media (max-width: 550px) {
- 
-
   td {
     font-size: 14px;
   }
-  
-
 }
 @media (max-width: 470px) {
-
-
   td {
-    padding:  0px;
+    padding: 0px;
     text-align: center;
     margin: 0;
     text-align: center;
@@ -107,83 +84,50 @@ td {
     text-align: center;
     padding: 0;
     margin: 0 30px;
-     
-    }
-
-    th, td {
-      padding: 5px 0 5px 5px ;
-      text-align: center;
-      
-      text-align: center;
-    }
-    
   }
-  
+
+  th,
+  td {
+    padding: 5px 0 5px 5px;
+    text-align: center;
+
+    text-align: center;
+  }
+}
 
 @media (max-width: 450px) {
- 
   .table-container {
     max-width: 100%;
     overflow-x: auto;
     padding: 5px;
-    max-height: 270px; 
-   
+    max-height: 270px;
   }
 
-  
-  
-  th, td {
-    padding: 5px 0 5px 5px ;
+  th,
+  td {
+    padding: 5px 0 5px 5px;
     text-align: center;
-    
+
     text-align: center;
   }
-  
 }
 
-
-
-
 @media (max-width: 420px) {
- 
   .bookingList .table-container {
-position: relative;
-top:-40px;
+    position: relative;
+    top: -40px;
     padding: 0px;
-  
-   
   }
-  
-  
-  th, td {
-    padding: 3px 0 3px 0 ;
+
+  th,
+  td {
+    padding: 3px 0 3px 0;
     text-align: center;
     font-size: 12px;
     text-align: center;
-   
-    }
- 
-  
-
-
-
-  
-.bookingList .table-container{
-    height: 210px; 
-    
-  }
-  
-  
-
-
   }
 
-
-
-
-
-
-
-
-
-
+  .bookingList .table-container {
+    height: 210px;
+  }
+}

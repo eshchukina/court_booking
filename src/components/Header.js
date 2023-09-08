@@ -40,8 +40,6 @@ const Header = ({
   //   localStorage.getItem("userEmail") || ""
   // );
 
-
-
   const handleOpenModal = () => {
     setIsModalOpen(true);
     setIsLoginModalOpen(false);
@@ -313,9 +311,7 @@ const Header = ({
         {/* <div class="ball"></div> */}
         <div className="logo-wrapper">
           <div className="logo">
-          {/* <img src="court-booking.png" height={150} alt="" /> */}
-
-
+            {/* <img src="court-booking.png" height={150} alt="" /> */}
           </div>
         </div>
         <div className="login-wrapper">

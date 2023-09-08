@@ -1,13 +1,13 @@
-// app.test.js
+
 import React from "react";
-import { shallow } from "enzyme"; // Импорт необходимых библиотек
-import App from "./App"; // Импорт компонента для тестирования
-import "./setupTests"; // Импорт файла настройки enzyme перед запуском тестов
+import { shallow } from "enzyme"; 
+import App from "./App";
+import "./setupTests";
 
 describe("App Component", () => {
   it("renders without crashing", () => {
-    shallow(<App />); // Создание поверхностного (shallow) рендера компонента
+    shallow(<App />); 
   });
 
-  // Добавьте другие тесты по необходимости
+
 });
