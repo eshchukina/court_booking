@@ -6,8 +6,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     /* transition: 0.3s ease-in-out; */
+    /* padding: 100px; */
     padding: 100px;
-   
+
+ 
 }
 
 
@@ -95,7 +97,7 @@ background-color:#756685;
 
       transition: 0.3s;
 
-        
+   
       
     }
 
@@ -122,9 +124,7 @@ background-color:#756685;
 
 
 
-header.dark {
 
-}
 
       
 
@@ -377,3 +377,18 @@ header.dark {
 
 
 
+
+
+@media (max-width: 390px) {
+
+.logo{
+
+
+  padding: 80px;
+margin: 0 20px;
+
+
+}
+
+
+}

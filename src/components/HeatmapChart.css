@@ -222,7 +222,7 @@ line .apexcharts-gridline {
         margin-top: 30px;
       font-size: 18px;
         position: relative;
-        top:40px;
+        top:20px;
         text-align: center;
            
       
@@ -273,7 +273,7 @@ top:-120px;
 
       font-size: 15px;
   
-        top:20px;
+        top:10px;
         margin:0 0 0px 0;
 font-size: 15px;
 
@@ -297,7 +297,7 @@ font-size: 15px;
 
 
 
-top:-120px;
+top:-140px;
 }
     
   }

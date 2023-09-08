@@ -11,7 +11,7 @@
   height: 100%;
   margin: 0;
   background-color: #e0e4dc;
-
+  overflow: hidden;
 }
 
 body {
@@ -44,6 +44,6 @@ html .dark  {
 
 html{
   
-  overflow: hidden;
+
   transition: 0.5s;
 }

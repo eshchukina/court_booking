@@ -500,7 +500,7 @@ select option {
       bottom:300px;
      }
       .dashboard{
-      
+        overflow-x:hidden;
   overflow-y:scroll;
     height:70vh; 
     margin: 0;

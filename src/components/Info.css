@@ -78,7 +78,7 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
     .textInfo{
 
 
-        margin: 14px  0 0 0;
+        margin: 15px  0 0 0;
         text-align: center;
         
         font-size: 13px;
@@ -89,7 +89,8 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
 
     .info {
         font-size: 13px;
-     
+     position: relative;
+     top:40px;
       
      }
 
