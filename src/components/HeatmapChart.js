@@ -3,7 +3,7 @@ import ReactApexChart from "react-apexcharts";
 
 import "./HeatmapChart.css";
 
-function HeatmapChart({ reservations, courtData, value, index }) {
+function HeatmapChart({ reservations, courtData, value, index, isDarkMode }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -100,9 +100,7 @@ function HeatmapChart({ reservations, courtData, value, index }) {
     },
     dataLabels: {
       enabled: true,
-      style: {
-        colors: ["#fff"],
-      },
+      
     },
     xaxis: {
       categories: uniqueDates,
@@ -124,7 +122,8 @@ function HeatmapChart({ reservations, courtData, value, index }) {
   };
 
   return (
-    <div id="chart" className="chart-container">
+
+        <div id="chart" className={`chart-container ${isDarkMode ? "dark" : "light"}`}>
       <p className="personalName">Number of booked courts per day:</p>
       <ReactApexChart
         options={options}

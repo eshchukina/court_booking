@@ -46,7 +46,7 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
 
   return (
     <div className={`footer-wrapper ${isDarkMode ? "dark" : "light"}`}>
-      <div className="container">
+
         <div className="footer">
           <svg
             className="footer-wave-svg"
@@ -121,7 +121,7 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
             </div>
           </div>
         </div>
-      </div>
+   
     </div>
   );
 };

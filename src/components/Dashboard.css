@@ -6,9 +6,19 @@
 width: 100%;
 color: #756685;
 
- 
+
    /* font-family: 'Arsenal', sans-serif; */
 }
+
+
+
+
+  table {
+    text-align: center;
+    padding: 0;
+    margin: 0 180px;
+     
+    }
 
 .dashboard.dark{
   color: #e0e4dc;
@@ -52,11 +62,10 @@ color: #756685;
     max-width: 100%;
     overflow-x: auto;
     padding: 0px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
    
- 
+ margin: 0   ;
   }
-
 
   
 
@@ -74,7 +83,7 @@ color: #756685;
     font-size: 16px;
   }
 
- 
+
   
   .time-button {
    
@@ -108,15 +117,15 @@ color: #756685;
       -4px -4px 6px 0 rgba(116, 125, 136, .5), 
       inset -4px -4px 6px 0 rgba(255,255,255,.2),
       inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-      
+      background-color: #b2d957; 
       
       }
-      .time-button:hover
+      /* .time-button:hover
    
       { background-color: #b2d957; 
         
         }
- 
+  */
 
 
 
@@ -157,7 +166,10 @@ color: #756685;
 
   }
 
-
+  .selected-button-color {
+    background-color: #b3aabd;
+  }
+  
 
 
 
@@ -169,11 +181,22 @@ color: #756685;
   }
 
 
+  @media (max-width: 1100px) {
+  table {
+    text-align: center;
+    padding: 0;
+    margin: 0 150px;
+     
+    }
+  }
 
 
   @media (max-width: 768px) {
     table {
       font-size: 12px;
+      text-align: center;
+      padding: 0;
+      margin: 0 100px;
     }
 
     th, td {
@@ -352,7 +375,12 @@ select option {
 }
 
 
-
+.dashboard.dark select{
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+  -4px -4px 6px 0 rgba(85, 53, 91, 0.5),
+  inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+  inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
 
 
  table select  {
@@ -391,12 +419,25 @@ select option {
 
   }
 
+ 
+
+
+
+    table {
+      font-size: 12px;
+      text-align: center;
+      padding: 0;
+      margin: 0 15px;
+    }
+    .dashboard{
+      
+      overflow-y:scroll;
+        height:70vh; 
+        margin: 0;
+        padding: 0;
+        }
+
   }
-
-
-
-
-
 
 
 
@@ -404,11 +445,16 @@ select option {
   
  @media (max-width: 490px) {
 
-
+  table {
+    font-size: 12px;
+    text-align: center;
+    padding: 0;
+    margin: 0 ;
+  }
 
   .wrapper-dashboard{
     position: relative;
-    top: 0px;
+    top: -20px;
 
   }
   
@@ -443,5 +489,24 @@ select option {
 
     .table-container select {
       font-size: 15px;
+      
     }
+
+    table{
+      margin: 0;
+      font-size: 12px;
+      position: sticky;
+      right:25px;
+      bottom:300px;
+     }
+      .dashboard{
+      
+  overflow-y:scroll;
+    height:70vh; 
+    margin: 0;
+    padding: 0;
     }
+    
+
+  }
+

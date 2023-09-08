@@ -16,7 +16,7 @@
     align-items: center;
     height: 100%;
     transition: transform 0.3s ease-in-out;
-   
+
    
   
   }
@@ -93,6 +93,7 @@ color: white!important;
     color: #3c4049;
    z-index: 999999999999;
    text-align: center;
+   color: #756685;
    
   }
 
@@ -352,4 +353,39 @@ button.modalBtn:hover,
   
   .modalLogin h3 {
     text-align: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 390px) {
+
+
+  .modalContent select,
+.modalContent input[type="text"],
+.modalContent input[type="number"],
+.modalContent input[type="date"],
+.modalContent input[type="email"],
+.modalContent input[type="password"] {
+  padding: 6px;
+  font-size: 14px;
+background-color: #e0e4dc;
+
+  border: 1px solid  #756685;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+  -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+ 
+}
   }

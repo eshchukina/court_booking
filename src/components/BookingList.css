@@ -13,12 +13,21 @@ border: none;
 border-radius:20px;
 }
 
-table {
+.dashboard.dark .table-container{
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+  -4px -4px 6px 0 rgba(85, 53, 91, 0.5),
+  inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+  inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+
+.bookingList table {
 text-align: center;
 padding: 0;
-margin: 0;
+margin: 0 50px;
  
 }
+
 
 th{
   padding: 0px;
@@ -61,6 +70,21 @@ td {
 
 
 
+
+@media (max-width: 650px) {
+
+
+td {
+  padding: 5px 0px;
+  text-align: center;
+  
+  text-align: center;
+}
+
+}
+
+
+
 @media (max-width: 550px) {
  
 
@@ -70,7 +94,31 @@ td {
   
 
 }
+@media (max-width: 470px) {
 
+
+  td {
+    padding:  0px;
+    text-align: center;
+    margin: 0;
+    text-align: center;
+  }
+  .bookingList table {
+    text-align: center;
+    padding: 0;
+    margin: 0 30px;
+     
+    }
+
+    th, td {
+      padding: 5px 0 5px 5px ;
+      text-align: center;
+      
+      text-align: center;
+    }
+    
+  }
+  
 
 @media (max-width: 450px) {
  
@@ -85,22 +133,57 @@ td {
   
   
   th, td {
-    padding: 5px;
+    padding: 5px 0 5px 5px ;
     text-align: center;
     
     text-align: center;
   }
-  
   
 }
 
 
 
 
+@media (max-width: 420px) {
+ 
+  .bookingList .table-container {
+position: relative;
+top:-40px;
+    padding: 0px;
+  
+   
+  }
+  
+  
+  th, td {
+    padding: 3px 0 3px 0 ;
+    text-align: center;
+    font-size: 12px;
+    text-align: center;
+   
+    }
+ 
+  
 
-@media (max-width: 390px) {
-.table-container {
+
+
+  
+.bookingList .table-container{
+    height: 210px; 
+    
+  }
+  
+  
+
+
+  }
 
 
 
-}}
+
+
+
+
+
+
+

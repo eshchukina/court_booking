@@ -32,9 +32,20 @@ z-index: 1;
     font-size: 25px;
 
   }
+
+  .two{
+    position: relative;
+    left:14px;
+   
+
+  }
+
+
+
  .itemSideLast{
    cursor:help;
     font-size: 28px;
+    position: relative;
  }
 
   .sidemenu-item {
@@ -85,16 +96,11 @@ z-index: 2;
 
 }
 
-  .sidemenu-item sidemenu-item--projects{
-    margin: 0;
-    padding: 0;
 
-  }
-
-
+  
   .sidemenu-item:hover {
  
-    width: 150px;
+    width: 160px;
     cursor: pointer;
     color: #b2d957; 
     box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
@@ -102,10 +108,27 @@ z-index: 2;
 inset -4px -4px 6px 0 rgba(255,255,255,.2),
 inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
   }
+
+
+
+
+  .sidemenu.dark .sidemenu-item:hover{
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+    -4px -4px 6px 0 rgba(85, 53, 91, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
+
+
+
+
   .sidemenu-item:hover p {
     opacity: 100;
     transform: translateX(50px);
     z-index: 1;
+font-size: 15px;
+position: relative;
+right: 5px;
   }
   .sidemenu-item:hover .sidemenu-icon {
     width: 35px;
@@ -114,7 +137,7 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
   }
   .sidemenu-icon {
     width: 30px;
-    margin-left: 10px;
+    margin-left: 5px;
     position: absolute;
     z-index: 2;
 
@@ -132,17 +155,42 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
   
 
   .sidemenu p {
-    color: #fff;
+    color:  #e0e4dc;
     opacity: -100;
     transform: translateX(0px);
-    font-family: "Open Sans", sans-serif;
+    /* font-family: "Open Sans", sans-serif; */
     text-decoration: none;
-    font-weight: bolder;
+
     transition: 0.25s ease-in-out;
+ 
   }
 
 
 
+  @media (max-width: 1500px) {
+
+    .wrapper-sidemenu{
+      transition: 0.5s;
+        height: 100px;
+        align-items: center;
+        margin: 10px auto;
+        cursor: pointer;
+    
+        
+    }
+      .sidemenu {
+    
+        margin-left: 5%;
+        position: fixed;
+        top: 13%;
+        left: 20px;
+    z-index: 1;
+    
+        
+       
+      }
+
+  }
   @media (max-width: 600px) {
 
   .sidemenu {
@@ -160,11 +208,22 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
    
   }
   }
-  @media (max-width: 390px) {
-
+  @media (max-width: 450px) {
+    .sidemenu {
+ 
+   margin: 0 0 0 23px ;
+      top: 12%;
+    
+      
+     
+  
+    
+   
+  }
     .sidemenu-item {
       width: 40px;
       height: 40px;
+    
    
      
     }
@@ -178,6 +237,14 @@ inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
      
       font-size: 25px;
    }
+
+   .two{
+    
+    left:10px;
+   
+
+  }
+
     }
 
 

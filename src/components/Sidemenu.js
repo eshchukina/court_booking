@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faListCheck,
-  faHouse,
+  faUser,
   faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Sidemenu.css";
@@ -19,16 +19,16 @@ const Sidemenu = ({ isDarkMode, setCurrentComponent}) => {
               className="sidemenu-item sidemenu-item--home"
               onClick={() => setCurrentComponent("Dashboard")}
             >
-              <FontAwesomeIcon icon={faHouse} className="itemSide" />
-              <p>home</p>
+              <FontAwesomeIcon icon={faListCheck} className="itemSide" />
+              <p>book a court</p>
             </div>
 
             <div
               className="sidemenu-item sidemenu-item--projects"
               onClick={() => setCurrentComponent("BookingList")}
             >
-              <FontAwesomeIcon icon={faListCheck} className="itemSide" />
-              <p>bookings</p>
+              <FontAwesomeIcon icon={ faUser} className="itemSide two" />
+              <p>my bookings</p>
             </div>
             <div
               className="sidemenu-item sidemenu-item--info"
@@ -38,7 +38,7 @@ const Sidemenu = ({ isDarkMode, setCurrentComponent}) => {
                 icon={faCircleInfo}
                 className="itemSide itemSideLast"
               />
-              <p>info</p>
+              <p className="lastSideItem">info</p>
             </div>
           </nav>
         </div>

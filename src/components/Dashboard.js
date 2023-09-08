@@ -14,6 +14,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const [bookingFail, setBookingFail] = useState(false);
   const [selectedWeatherDay, setSelectedWeatherDay] = useState("");
 
+  const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
 
   const [selectedCourt, setSelectedCourt] = useState("");
   const [courtOptions, setCourtOptions] = useState([]); // New state variable for court options
@@ -53,7 +54,12 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
-
+  useEffect(() => {
+    if (selectedCourt && selectedDay) {
+      fetchReservationData(selectedCourt, selectedDay);
+    }// eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCourt, selectedDay]);
+  
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -122,6 +128,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   };
 
   const fetchReservationData = async (courtId, day) => {
+    
     try {
       const token = localStorage.getItem("accessToken");
       const headersWithToken = {
@@ -156,6 +163,9 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
       console.log("Error fetching reservation data:", error);
     }
   };
+
+
+
 
   const handleShowFireworks = () => {
     setTimeout(() => {
@@ -307,33 +317,32 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
                   <tr>
                     <td>
                       <div className="time-buttons-column">
-                        {reservationData
-                          .filter((option) => option.date === selectedDay)
-                          .map((timeSlot) => (
-                            <button
-                              key={timeSlot.id}
-                              onClick={() => {
-                                if (!timeSlot.booked) {
-                                  setSelectedHour(timeSlot.start_time);
-                                  setTimeSelectionManual(true); // Mark time selection as manual
-                                  handleShowFireworks();
-                                  reserveSlot();
-                                  fetchAccountData();
-                                }
-                              }}
-                              className={`time-button ${
-                                timeSlot.booked ? "busy-time" : "free-time"
-                              }`}
-                              disabled={
-                                timeSelectionManual &&
-                                selectedHour !== timeSlot.start_time
-                              }
-                            >
-                              {formatTime(timeSlot.start_time)} -{" "}
-                              {formatTime(timeSlot.end_time)}{" "}
-                              {timeSlot.booked ? " " : " "}
-                            </button>
-                          ))}
+{reservationData
+  .filter((option) => option.date === selectedDay)
+  .map((timeSlot, index) => (
+    <button
+      key={timeSlot.id}
+      onClick={() => {
+        if (!timeSlot.booked) {
+          setSelectedHour(timeSlot.start_time);
+          setTimeSelectionManual(true);
+          setSelectedButtonIndex(index); // Set the selected button index
+        }
+      }}
+      className={`time-button ${
+        timeSlot.booked ? "busy-time" : "free-time"
+      } ${
+        selectedButtonIndex === index ? "selected-button selected-button-color" : ""
+      }`}
+      disabled={timeSelectionManual && selectedHour !== timeSlot.start_time}
+    >
+      {formatTime(timeSlot.start_time)} - {formatTime(timeSlot.end_time)}{" "}
+      {timeSlot.booked ? " " : " "}
+    </button>
+  ))}
+
+
+
                       </div>
                     </td>
                   </tr>
@@ -353,7 +362,10 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
                               handleShowFireworks();
                               reserveSlot();
                               fetchAccountData();
+                              fetchReservationData();
                             }
+                            fetchAccountData();
+                            fetchReservationData();
                           }}
                         >
                           {/* <FontAwesomeIcon icon={faCheck} /> */}

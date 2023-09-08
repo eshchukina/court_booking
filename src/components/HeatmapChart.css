@@ -12,7 +12,9 @@
 
 
 
-
+#chart tspan{
+    font-size: 14px;
+}
 
 
 
@@ -61,18 +63,24 @@ title{
 
 text {
     fill: #756685; 
+  
+  
+
+}
+
+.chart-container text {
+    fill: #e0e4dc; 
     font-size: 13px;
   
 
 }
 
+
 .apexcharts-xaxis-tick {
     display :none;
 }
 
-.apexcharts-datalabel{
-  
-}
+
 
 .apexcharts-gridlines-vertical{
     fill: #e0e4dc!important;
@@ -94,7 +102,17 @@ g .apexcharts-grid-borders{
     background-color:   #e0e4dc!important;
 
 }
+.chart-container.dark line{
+    stroke: #756685 !important;
+}
 
+
+.chart-container.light  text {
+    fill: #756685 !important;
+ 
+  
+
+}
 
 
 
@@ -142,7 +160,10 @@ line .apexcharts-gridline {
   }
 
 
-  @media (max-width: 650px) {
+
+
+
+  @media (max-width: 800px) {
     #chart {
      
         width: 600px;
@@ -150,7 +171,35 @@ line .apexcharts-gridline {
     
     }
     #chart .personalName{
-        width: 400px;
+   
+        margin-top: 30px;
+      font-size: 18px;
+        position: relative;
+        top:40px;
+        text-align: center;
+           
+      
+        }
+
+        #chart tspan{
+            font-size: 10px;
+        }
+        
+    
+  }
+
+
+  
+/* 
+  @media (max-width: 600px) {
+    #chart {
+     
+        width: 500px;
+    
+    
+    }
+    #chart .personalName{
+     
         margin-top: 30px;
       font-size: 18px;
         position: relative;
@@ -160,19 +209,39 @@ line .apexcharts-gridline {
       
         }
     
-  }
-
-  
-  @media (max-width: 390px) {
-    #chart .personalName{
+  }*/
+  @media (max-width: 700px) {
+    #chart {
+        text-align: center;
+        width: 500px;
     
-        margin-top: 0px;
-      font-size: 15px;
+    
+    }
+    #chart .personalName{
+       
+        margin-top: 30px;
+      font-size: 18px;
         position: relative;
-        top:30px;
-        
+        top:40px;
+        text-align: center;
            
       
+    }
+    
+  } 
+
+  
+  @media (max-width: 650px) {
+    #chart .personalName{
+
+
+      font-size: 15px;
+  
+        top:20px;
+        margin:0 0 0px 0;
+font-size: 15px;
+
+           
         }
 
         
@@ -182,11 +251,54 @@ text {
   
 
 }
-#chart {
-     
-    width: 400px;
-    height: 150px;
 
+
+.chart-container{
+    position: relative;
+    right: 30px;
+ /* bottom:50px; */
+
+
+
+
+top:-120px;
 }
     
   }
+
+
+  @media (max-width: 500px) {
+    #chart .personalName{
+
+
+      font-size: 15px;
+  
+        top:20px;
+        margin:0 0 0px 0;
+font-size: 15px;
+
+           
+        }
+
+        
+        #chart {
+            text-align: center;
+            width: 450px;
+        
+        
+        }
+
+
+.chart-container{
+    position: relative;
+    right: 30px;
+ /* bottom:50px; */
+
+
+
+
+top:-120px;
+}
+    
+  }
+

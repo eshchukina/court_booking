@@ -183,7 +183,7 @@ const BookingList = ({ isDarkMode, account }) => {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
   >
-    <div className={`dashboard ${isDarkMode ? "dark" : "light"}`}>
+    <div className={`bookingList dashboard ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
         <div className="wrapper-dashboard">
           <div className="dashboard-wrapper">
@@ -270,7 +270,7 @@ const BookingList = ({ isDarkMode, account }) => {
       </div>
 
       {userName ? (
-        <HeatmapChart reservations={reservations} courtData={courtData} />
+        <HeatmapChart reservations={reservations} courtData={courtData}   isDarkMode={isDarkMode}/>
       ) : null}
     </div>
       </motion.div>
