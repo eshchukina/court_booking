@@ -3,8 +3,6 @@
 .dashboard {
   width: 100%;
   color: #756685;
-
-  /* font-family: 'Arsenal', sans-serif; */
 }
 
 table {
@@ -31,6 +29,7 @@ table {
   justify-content: center;
   align-items: center;
 }
+
 .box:first-child {
   padding: 5px 16px;
 }
@@ -39,8 +38,6 @@ table {
   max-width: 100%;
   overflow-x: auto;
   padding: 0px;
-  /* margin-top: 20px; */
-
   margin: 0;
 }
 
@@ -48,7 +45,6 @@ th,
 td {
   padding: 0px 10px;
   text-align: left;
-
   border-radius: 10px;
   text-align: center;
 }
@@ -72,7 +68,6 @@ td {
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
-
   background: #e0e4dc;
   border: none;
   cursor: pointer;
@@ -86,12 +81,6 @@ td {
     inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
   background-color: #b2d957;
 }
-/* .time-button:hover
-   
-      { background-color: #b2d957; 
-        
-        }
-  */
 
 button {
   margin: 20px;
@@ -105,6 +94,7 @@ button {
   background: rgb(68, 68, 68);
   border: none;
 }
+
 .btn-2:before {
   height: 0%;
   width: 2px;
@@ -155,8 +145,6 @@ button {
 th p {
   font-size: 20px;
   font-weight: 100;
-
-  /* font-family: 'Pacifico', cursive;   */
 }
 
 .personalName {
@@ -164,6 +152,7 @@ th p {
   padding: 0px;
   font-size: 20px;
 }
+
 .wrapper-dashboard .personalName {
   margin-bottom: 20px;
 }
@@ -223,21 +212,15 @@ th p {
 }
 
 select {
-  /* font-family: 'Arsenal', sans-serif;
-       */
-
   font-family: "Vidaloka", serif;
   cursor: pointer;
   text-align: center;
   color: #756685;
-
   font-size: 18px;
   margin-bottom: 20px;
-
   background-color: #e0e4dc;
   padding: 10px;
   border-radius: 10px;
-
   border: none;
   box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
     -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
@@ -257,7 +240,6 @@ select:active {
     -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
-
   border: none;
 }
 
@@ -266,7 +248,6 @@ select:focus {
     -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
     inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
     inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
-
   border: none;
 }
 
@@ -288,7 +269,6 @@ select option {
 
 table select {
   border: none;
-
   box-shadow: none;
 }
 
@@ -298,7 +278,6 @@ table select {
     overflow-x: auto;
     padding: 10px;
     overflow-y: auto;
-
     position: relative;
     top: 0px;
   }
@@ -314,6 +293,7 @@ table select {
     padding: 0;
     margin: 0 15px;
   }
+
   .dashboard {
     overflow-y: scroll;
     height: 70vh;
@@ -362,6 +342,7 @@ table select {
     right: 25px;
     bottom: 300px;
   }
+  
   .dashboard {
     overflow-x: hidden;
     overflow-y: scroll;

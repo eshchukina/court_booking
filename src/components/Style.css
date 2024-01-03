@@ -60,6 +60,7 @@
 .buttonCLose:hover {
   color: white !important;
 }
+
 .modalContent {
   background-color: #e0e4dc;
   padding: 20px;
@@ -91,7 +92,6 @@
   padding: 6px;
   font-size: 14px;
   background-color: #e0e4dc;
-
   border: none;
   border-radius: 10px;
   margin: 10px;
@@ -115,7 +115,6 @@ button.modalBtn:hover,
   padding: 5px 10px;
   margin: 5px;
   font-size: 16px;
-
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -132,6 +131,7 @@ button.modalBtn:hover,
 .modalBtn.light {
   background-color: #9dafb4;
 }
+
 button.modalBtn:hover {
   background-position: right center;
 }
@@ -139,7 +139,6 @@ button.modalBtn:hover {
 .modalButton {
   padding: 5px;
   font-size: 16px;
-
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -249,6 +248,7 @@ button.modalBtn:hover {
 .modalContent.dark input[type="password"] {
   background-color: #b8bbc4;
 }
+
 .modalLogin {
   z-index: 999990000;
 }
@@ -280,7 +280,6 @@ button.modalBtn:hover {
     padding: 6px;
     font-size: 14px;
     background-color: #e0e4dc;
-
     border: 1px solid #756685;
     border-radius: 10px;
     margin: 10px;

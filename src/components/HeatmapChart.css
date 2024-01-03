@@ -60,11 +60,13 @@ g .apexcharts-grid-borders {
   fill: #e0e4dc !important;
   background-color: #e0e4dc !important;
 }
+
 line .apexcharts-ycrosshairs {
   color: #e0e4dc !important;
   fill: #e0e4dc !important;
   background-color: #e0e4dc !important;
 }
+
 .chart-container.dark line {
   stroke: #756685 !important;
 }
@@ -77,6 +79,7 @@ line .apexcharts-gridline {
   fill: #e0e4dc !important;
   background-color: #e0e4dc !important;
 }
+
 .apexcharts-xcrosshairs,
 .apexcharts-ycrosshairs,
 .apexcharts-gridline {
@@ -101,7 +104,6 @@ line .apexcharts-gridline {
 
 #chart .personalName {
   margin-top: 5px;
-
   position: relative;
   top: 20px;
 }
@@ -110,6 +112,7 @@ line .apexcharts-gridline {
   #chart {
     width: 600px;
   }
+
   #chart .personalName {
     margin-top: 30px;
     font-size: 18px;
@@ -123,31 +126,12 @@ line .apexcharts-gridline {
   }
 }
 
-/* 
-  @media (max-width: 600px) {
-    #chart {
-     
-        width: 500px;
-    
-    
-    }
-    #chart .personalName{
-     
-        margin-top: 30px;
-      font-size: 18px;
-        position: relative;
-        top:40px;
-        text-align: center;
-           
-      
-        }
-    
-  }*/
 @media (max-width: 700px) {
   #chart {
     text-align: center;
     width: 500px;
   }
+
   #chart .personalName {
     margin-top: 30px;
     font-size: 18px;
@@ -160,7 +144,6 @@ line .apexcharts-gridline {
 @media (max-width: 650px) {
   #chart .personalName {
     font-size: 15px;
-
     top: 20px;
     margin: 0 0 0px 0;
     font-size: 15px;
@@ -173,8 +156,6 @@ line .apexcharts-gridline {
   .chart-container {
     position: relative;
     right: 30px;
-    /* bottom:50px; */
-
     top: -120px;
   }
 }
@@ -182,7 +163,6 @@ line .apexcharts-gridline {
 @media (max-width: 500px) {
   #chart .personalName {
     font-size: 15px;
-
     top: 10px;
     margin: 0 0 0px 0;
     font-size: 15px;
@@ -196,8 +176,6 @@ line .apexcharts-gridline {
   .chart-container {
     position: relative;
     right: 30px;
-    /* bottom:50px; */
-
     top: -140px;
   }
 }

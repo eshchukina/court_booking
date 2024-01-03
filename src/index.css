@@ -1,13 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Montserrat:wght@100;300;600;700&family=Nunito:wght@200&family=Pacifico&family=Vidaloka&family=Ysabeau+SC:wght@1;100;200;300;500&display=swap'); */
 
+@import url("https://fonts.googleapis.com/css2?family=Arsenal&family=Montserrat:wght@100;300;600;700&family=Nunito:wght@200&family=Pacifico&family=Patrick+Hand&family=Vidaloka&family=Ysabeau+SC:wght@1;100;200;300;500&display=swap");
 
-
- /* @import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Montserrat:wght@100;300;600;700&family=Nunito:wght@200&family=Pacifico&family=Vidaloka&family=Ysabeau+SC:wght@1;100;200;300;500&display=swap'); */
-
-
- @import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Montserrat:wght@100;300;600;700&family=Nunito:wght@200&family=Pacifico&family=Patrick+Hand&family=Vidaloka&family=Ysabeau+SC:wght@1;100;200;300;500&display=swap');
-
-
- html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   background-color: #e0e4dc;
@@ -15,35 +11,16 @@
 }
 
 body {
-
-/* background-image: url("/public/background.jpg");
-background-size:contain;
-background-repeat: no-repeat; */
-  font-family: 'Vidaloka', serif;
-overflow: hidden;
-
-
-
-
+  font-family: "Vidaloka", serif;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* body .dark  {
-
-  background-color: #756685;
-} */
-
-html .dark  {
- 
+html .dark {
   background-color: #756685;
 }
 
-
-
-
-html{
-  
-
+html {
   transition: 0.5s;
 }

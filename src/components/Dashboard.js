@@ -12,20 +12,14 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [bookingFail, setBookingFail] = useState(false);
   const [selectedWeatherDay, setSelectedWeatherDay] = useState("");
-
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
-
   const [selectedCourt, setSelectedCourt] = useState("");
-  const [courtOptions, setCourtOptions] = useState([]); 
-
+  const [courtOptions, setCourtOptions] = useState([]);
   const [selectedDay, setSelectedDay] = useState("");
   const [selectedHour, setSelectedHour] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const [reservationData, setReservationData] = useState([]);
-
   const [timeSelectionManual, setTimeSelectionManual] = useState(false);
-
   const storedSelectedCourt = localStorage.getItem("selectedCourt");
   const storedSelectedDay = localStorage.getItem("selectedDay");
   const storedSelectedHour = localStorage.getItem("selectedHour");
@@ -50,13 +44,12 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     if (storedCourtOptions) {
       setCourtOptions(storedCourtOptions);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (selectedCourt && selectedDay) {
       fetchReservationData(selectedCourt, selectedDay);
-    } // eslint-disable-next-line react-hooks/exhaustive-deps
+    } 
   }, [selectedCourt, selectedDay]);
 
   const closeModal = () => {
@@ -105,7 +98,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const handleCourtSelectionChange = (e) => {
     const selectedCourtId = e.target.value;
     setSelectedCourt(selectedCourtId);
-    setSelectedHour(""); 
+    setSelectedHour("");
 
     if (selectedCourtId && selectedDay) {
       fetchReservationData(selectedCourtId, selectedDay);
@@ -117,7 +110,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
     const selectedDayValue = e.target.value;
     setSelectedDay(selectedDayValue);
     setSelectedWeatherDay(selectedDayValue);
-    setSelectedHour(""); 
+    setSelectedHour("");
     if (selectedCourt && selectedDayValue) {
       fetchReservationData(selectedCourt, selectedDayValue);
     }
@@ -149,7 +142,6 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
       setReservationData(data);
       setBookingSuccess(false);
       setBookingFail(false);
-
       localStorage.setItem("reservationData", JSON.stringify(data));
       localStorage.setItem("selectedHour", selectedHour);
       localStorage.setItem("courtOptions", JSON.stringify(data));
@@ -163,19 +155,13 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
   const handleShowFireworks = () => {
     setTimeout(() => {
       setShowFireworks(false);
-    }, 1500); 
+    }, 1500);
   };
 
   const formatTime = (isoTime) => {
     const date = new Date(isoTime);
-    const hours = date
-      .getUTCHours()
-      .toString()
-      .padStart(2, "0");
-    const minutes = date
-      .getUTCMinutes()
-      .toString()
-      .padStart(2, "0");
+    const hours = date.getUTCHours().toString().padStart(2, "0");
+    const minutes = date.getUTCMinutes().toString().padStart(2, "0");
     return `${hours}:${minutes}`;
   };
 
@@ -220,7 +206,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
       }
 
       const reservation = {
-        id: selectedTimeSlot.id, 
+        id: selectedTimeSlot.id,
         court_id: parseInt(selectedCourt),
         date: selectedDay,
         start_time: selectedTimeSlot.start_time,
@@ -242,14 +228,12 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
         return;
       }
 
-     
       const updatedReservationData = reservationData.map((timeSlot) =>
         timeSlot.start_time === selectedHour
           ? { ...timeSlot, booked: true }
           : timeSlot
       );
       setReservationData(updatedReservationData);
-
       setShowFireworks(true);
       setBookingSuccess(true);
       setBookingFail(false);
@@ -308,7 +292,6 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
                 ))}
               </select>
             </div>
-
             <div className="dashboard-wrapper">
               <div className="table-container">
                 <table>
@@ -328,7 +311,7 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
                                   if (!timeSlot.booked) {
                                     setSelectedHour(timeSlot.start_time);
                                     setTimeSelectionManual(true);
-                                    setSelectedButtonIndex(index); 
+                                    setSelectedButtonIndex(index);
                                   }
                                 }}
                                 className={`time-button ${
@@ -373,7 +356,6 @@ const Dashboard = ({ isDarkMode, account, headersWithToken }) => {
                               fetchReservationData();
                             }}
                           >
-                            {/* <FontAwesomeIcon icon={faCheck} /> */}
                             booking
                           </button>
                         </td>

@@ -1,23 +1,19 @@
 .logo {
-  /* background-image: url("/public/court-booking.png"); */
   background-image: url("court-booking.png");
   background-size: contain;
   background-repeat: no-repeat;
-  /* transition: 0.3s ease-in-out; */
-  /* padding: 100px; */
   padding: 100px;
 }
 
 .logo:hover {
   transform: rotate(360deg);
 }
+
 .logo:hover {
   transition: 0.3s ease-in-out;
 }
 
 .login-wrapper {
-  /* transition: 0.3s ease-in-out; */
-
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -25,12 +21,6 @@
 .header.dark .logo {
   background-image: url("court-booking-dark.png");
 }
-
-/* --text: #0d0e0b;
---background: #f7f8f6;
---primary: #756685;
---secondary: #e0e4dc;
---accent: #a2e85d; */
 
 .buttonTheme {
   border-radius: 50%;
@@ -40,7 +30,6 @@
   font-size: 20px;
   padding: 5px 9px;
   position: relative;
-  /* left: 10px; */
   transition: 0.5s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -63,14 +52,12 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   background-color: #756685;
-  /* color: #756685; */
   border-radius: 50%;
   color: #e0e4dc;
   border: 3px solid #756685;
   font-size: 20px;
   padding: 5px 9px;
   position: relative;
-
   transition: 0.3s;
 }
 
@@ -81,16 +68,9 @@
     inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* --text: #0d0e0b;
---background: #f7f8f6;
---primary: #756685;
---secondary: #e0e4dc;
---accent: #a2e85d; */
-
 .logIn.dark {
   transition: 0.3s;
   left: 0px;
-
   color: #e0e4dc;
 }
 
@@ -121,6 +101,7 @@
   right: 2px;
   margin: 0px;
 }
+
 .ball:after,
 .ball:before {
   content: "";
@@ -135,12 +116,15 @@
 .ball:after {
   left: -85%;
 }
+
 .ball:before {
   right: -85%;
 }
+
 .ball:nth-child(odd) {
   animation: r 5s infinite linear;
 }
+
 .ball:nth-child(even) {
   animation: r2 5s infinite linear;
 }
@@ -153,6 +137,7 @@
     transform: rotate(585deg);
   }
 }
+
 @keyframes r2 {
   0% {
     transform: rotate(-45deg);
@@ -178,12 +163,6 @@
   }
 }
 
-/* @keyframes fireworkPseudo {
-  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }
-  50% { width: 0.5vmin; opacity: 1; }
-  100% { width: var(--finalSize); opacity: 0; }
-}
- */
 .firework,
 .firework::before,
 .firework::after {

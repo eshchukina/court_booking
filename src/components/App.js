@@ -15,8 +15,6 @@ function App() {
   });
 
   const [currentComponent, setCurrentComponent] = useState("dashboard");
-  // const [userName, setUserName] = useState("");
-
   const headersWithToken = {};
 
   useEffect(() => {
@@ -26,13 +24,6 @@ function App() {
       document.body.classList.remove("dark");
     }
     localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
-    // const storedUserName = localStorage.getItem("userName");
-    // if (!storedUserName) {
-    //   setCurrentComponent("Info");
-    // } else {
-    //   setCurrentComponent("Dashboard");
-
-    // }
   }, [isDarkMode]);
 
   const toggleTheme = () => {
@@ -51,7 +42,7 @@ function App() {
         isDarkMode={isDarkMode}
         toggleTheme={toggleTheme}
         setCurrentComponent={setCurrentComponent}
-        currentComponent={currentComponent} 
+        currentComponent={currentComponent}
         headersWithToken={headersWithToken}
       />
       <div

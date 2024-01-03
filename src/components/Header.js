@@ -13,9 +13,7 @@ import {
 
 import "./Sidemenu.css";
 import "./Style.css";
-
 import LoginButton from "./LoginButton";
-
 import "./Header.css";
 
 const Header = ({
@@ -108,15 +106,11 @@ const Header = ({
 
       if (response.ok) {
         console.log("Registration successful");
-
         setName("");
         setEmail("");
         setPassword("");
-
         setIsModalOpen(false);
-
         handleOpenLoginModal();
-        // localStorage.setItem('userName', name);
       } else {
         console.log("Registration failed");
       }
@@ -134,7 +128,6 @@ const Header = ({
     };
 
     try {
-      // const response = await fetch(`${config.apiUrl}authorization/`,
       const response = await fetch(`${config.apiUrl}login`, {
         method: "POST",
         mode: "cors",
@@ -152,16 +145,13 @@ const Header = ({
           console.log(`${config.apiUrl}`);
           setName(name);
           setEmail(email);
-
           localStorage.setItem("userName", name);
-
           localStorage.setItem("accessToken", accessToken);
           localStorage.setItem("refreshToken", refreshToken);
           localStorage.setItem("expiresIn", expires_in.toString());
           console.log("accessToken", accessToken);
 
           setIsLoggedIn(true);
-          // localStorage.setItem("lastVisitedAccount", activeAccount.id);
           if (activeAccount && activeAccount.id) {
             localStorage.setItem("lastVisitedAccount", activeAccount.id);
           }
@@ -206,7 +196,6 @@ const Header = ({
       try {
         console.log("Refresh Token URL:", `${config.apiUrl}refresh`);
         console.log(JSON.stringify({ refreshToken: storedRefreshToken }));
-        // const response = await fetch(`${config.apiUrl}refresh/`,
         const response = await fetch(
           `${config.apiUrl}refresh`,
 
@@ -270,10 +259,6 @@ const Header = ({
       }
     }
   }, []);
-
-  // const reloadPage = () => {
-  //   window.location.reload();
-  // };
 
   const handlePasswordVisibility = () => {
     setShowPassword(!showPassword);

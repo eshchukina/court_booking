@@ -7,9 +7,9 @@ const LoginButton = ({ isDarkMode, handleOpenLoginModal }) => {
     <button
       className={`logIn ${isDarkMode ? "dark" : "light"}`}
       onClick={handleOpenLoginModal}
-      title = "register"
+      title="register"
     >
-      <FontAwesomeIcon icon={faArrowRightToBracket}/>
+      <FontAwesomeIcon icon={faArrowRightToBracket} />
     </button>
   );
 };

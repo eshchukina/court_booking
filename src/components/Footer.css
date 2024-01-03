@@ -59,6 +59,7 @@
 .footer-social-amoeba-path {
   fill: #e0e4dc;
 }
+
 .footer-wrapper.dark .footer-social-amoeba-path {
   fill: #756685;
 }
@@ -97,9 +98,7 @@
   width: 34px;
 }
 
-
 @media (min-width: 320px) and (max-width: 479px) {
-
   .footer-content {
     margin-left: auto;
     margin-right: auto;
@@ -117,8 +116,8 @@
     width: 100%;
   }
 }
+
 @media (min-width: 480px) and (max-width: 599px) {
-  
   .footer-content {
     margin-left: auto;
     margin-right: auto;
@@ -127,8 +126,8 @@
     position: relative;
   }
 }
-@media (min-width: 600px) and (max-width: 800px) {
 
+@media (min-width: 600px) and (max-width: 800px) {
   .footer-content {
     margin-left: auto;
     margin-right: auto;
@@ -155,11 +154,7 @@
     width: 24.99%;
   }
 }
-@media (min-width: 568px) {
-  /* .footer-content-column {
-        width: 49.99%;
-    } */
-}
+
 
 .textItem {
   position: relative;

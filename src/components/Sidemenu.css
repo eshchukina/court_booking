@@ -56,7 +56,6 @@
 
 .arrow {
   color: #756685;
-
   position: absolute;
   left: 60px;
   top: 15px;
@@ -73,9 +72,11 @@
     opacity: 0;
   }
 }
+
 .hidden {
   display: none;
 }
+
 .visible {
   display: none;
 }
@@ -105,16 +106,17 @@
   position: relative;
   right: 5px;
 }
+
 .sidemenu-item:hover .sidemenu-icon {
   width: 35px;
   margin-left: 7.5px;
 }
+
 .sidemenu-icon {
   width: 30px;
   margin-left: 5px;
   position: absolute;
   z-index: 2;
-
   transition: all 0.15s ease-in-out;
 }
 
@@ -126,9 +128,7 @@
   color: #e0e4dc;
   opacity: -100;
   transform: translateX(0px);
-  /* font-family: "Open Sans", sans-serif; */
   text-decoration: none;
-
   transition: 0.25s ease-in-out;
 }
 
@@ -140,6 +140,7 @@
     margin: 10px auto;
     cursor: pointer;
   }
+
   .sidemenu {
     margin-left: 5%;
     position: fixed;
@@ -148,6 +149,7 @@
     z-index: 1;
   }
 }
+
 @media (max-width: 600px) {
   .sidemenu {
     height: 50px;
@@ -158,20 +160,24 @@
     z-index: 1;
   }
 }
+
 @media (max-width: 450px) {
   .sidemenu {
     margin: 0 0 0 23px;
     top: 12%;
   }
+
   .sidemenu-item {
     width: 40px;
     height: 40px;
   }
+
   .itemSide {
     position: relative;
     left: 8px;
     font-size: 20px;
   }
+
   .itemSideLast {
     font-size: 25px;
   }
@@ -191,6 +197,6 @@
     background-color: transparent;
   }
   50% {
-    background-color: yellow; /* Change this to your desired flashing color */
+    background-color: yellow; 
   }
 }
